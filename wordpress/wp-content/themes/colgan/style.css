@@ -45,16 +45,16 @@ Version: 1.0
 	
 	/* Base */
 	
-	html { overflow-y: scroll; }
-	body { background: #f2f2f2; color: #222; font: normal normal 16px/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; }
+	html { background: #3c2415; overflow-y: scroll; }
+	body { color: #333; font: 100%/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; }
 	
 	/* Block */
 	
-	blockquote { color: #666; margin: 3em 0; padding: 0 0 0 2em; }
+	blockquote { color: #666; }
 	
 	h1,
 	h2,
-	h3 { font-family: "trajan-pro", serif; line-height: 1; margin: 2em 0 1em; }
+	h3 { font-family: "museo-slab", serif; font-weight: normal; line-height: 1; margin: 2em 0 1em; }
 	h1 { font-size: 200%; letter-spacing: -0.05em; }
 	h2 { font-size: 150%; }
 	h3 { font-size: 100%; }
@@ -65,8 +65,8 @@ Version: 1.0
 	
 	/* Inline */
 	
-	a {}
-	a:hover {}
+	a { color: #3c2415; text-decoration: none; }
+	a:hover { text-decoration: underline; }
 	
 	img { border: 0; vertical-align: bottom; }
 	
@@ -81,17 +81,28 @@ Version: 1.0
 
 	/* RootClear Floats */
 	
+	[role=navigation] ul:after,
 	#content:after { height: 0; clear: both; content: "\0020"; display: block; visibility: hidden; }
+	
+	/* Page */
+	
+	body { background: #fff; max-width: 600px; margin: 40px auto; padding: 40px; }
 	
 	/* Header */
 	
-	[role=banner] {}
+	[role=banner] { border-bottom: 1px solid #eee; padding: 0 0 20px; }
+	[role=banner] h1 { margin: 0; }
 	
 	/* Nav */
 	
 	[role=navigation] {}
+	[role=navigation] ul { list-style-type: none; }
+	[role=navigation] li { float: left; line-height: 40px; }
+	[role=navigation] a { display: block; padding: 1em; }
 	
 	/* Content */
+	
+	#content { padding: 40px 0; }
 	
 	[role=main] {}
 	
@@ -101,14 +112,22 @@ Version: 1.0
 	
 	/* Footer */
 	
-	[role=contentinfo] {}
+	[role=contentinfo] { border-top: 1px solid #eee; padding: 20px 0 0; }
+	[role=contentinfo] blockquote,
+	[role=contentinfo] p { margin: 0; }
 
 
 /* 3. Respond
 ----------------------------------------------------------------------------- */
 
+@media (max-device-width: 768px), (max-width: 768px) {
+
+	body { margin: 40px; }
+
+}
+
 @media (max-device-width: 480px), (max-width: 480px) {
 
-	
+	body { font-size: 90%; margin: 0; padding: 20px; }
 
 }

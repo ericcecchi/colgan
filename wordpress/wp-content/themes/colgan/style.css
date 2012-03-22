@@ -6,3 +6,109 @@ Author: Matthew Born
 Author URI: http://mattborn.com/
 Version: 1.0
 */
+
+
+/* 1. Standardize
+----------------------------------------------------------------------------- */
+
+	/* Reset */
+	
+	article,
+	aside,
+	blockquote,
+	body,
+	dd,
+	div,
+	dl,
+	dt,
+	figure,
+	footer,
+	form,
+	h1,
+	h2,
+	h3,
+	header,
+	input,
+	label,
+	menu,
+	nav,
+	ol,
+	p,
+	section,
+	table,
+	td,
+	textarea,
+	th,
+	tr,
+	time,
+	ul { margin: 0; padding: 0; }
+	
+	/* Base */
+	
+	html { overflow-y: scroll; }
+	body { background: #f2f2f2; color: #222; font: normal normal 16px/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; }
+	
+	/* Block */
+	
+	blockquote { color: #666; margin: 3em 0; padding: 0 0 0 2em; }
+	
+	h1,
+	h2,
+	h3 { font-family: "trajan-pro", serif; line-height: 1; margin: 2em 0 1em; }
+	h1 { font-size: 200%; letter-spacing: -0.05em; }
+	h2 { font-size: 150%; }
+	h3 { font-size: 100%; }
+	
+	ol, ul { margin: 0 0 1.5em; }
+	
+	p { margin: 0 0 1.5em; }
+	
+	/* Inline */
+	
+	a {}
+	a:hover {}
+	
+	img { border: 0; vertical-align: bottom; }
+	
+	/* Forms */
+	
+	label { margin: 2em 0 .5em; }
+	input, textarea { border: 1px solid #ddd; font-size: 16px; padding: 10px; }
+
+
+/* 2. Interface
+----------------------------------------------------------------------------- */
+
+	/* RootClear Floats */
+	
+	#content:after { height: 0; clear: both; content: "\0020"; display: block; visibility: hidden; }
+	
+	/* Header */
+	
+	[role=banner] {}
+	
+	/* Nav */
+	
+	[role=navigation] {}
+	
+	/* Content */
+	
+	[role=main] {}
+	
+	/* Sidebar */
+	
+	[role=complementary] {}
+	
+	/* Footer */
+	
+	[role=contentinfo] {}
+
+
+/* 3. Respond
+----------------------------------------------------------------------------- */
+
+@media (max-device-width: 480px), (max-width: 480px) {
+
+	
+
+}

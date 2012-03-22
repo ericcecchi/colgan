@@ -1,0 +1,268 @@
+.jqueryslidemenu{
+
+clear:both;
+
+font:12px normal Georgia, "Times New Roman", Times, serif;
+
+/*background: #414141;*/
+
+width: 100%;
+
+background:url("Orange/brownslidemenu_bg.gif") repeat-x;
+
+height:44px;
+
+padding:0;
+
+z-index:10;
+
+position:relative;
+
+}
+
+#slideMenuWrapper
+{
+	border-bottom:thin solid #ddd;
+	border-top:thin solid #ddd;
+	clear:both;
+	margin:0 0 40px;
+	padding:4px 0;
+	position:relative;
+	color: #fff;
+}
+
+#loginContact
+{
+	display:inline;
+	float: right;
+	margin-left: 0;
+	position: relative;
+	padding: 14px 13px;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 105px;
+}
+
+#loginContact p
+{
+	display: inline;
+	text-align: center;
+	padding: 0 5px;
+}
+
+#loginContact a
+{
+	color: #fff;
+}
+
+#loginContact a:hover
+{
+	color: #ccc;
+}
+
+.jqueryslidemenu ul{
+
+margin: 0;
+
+padding:0;
+
+list-style-type: none;
+
+}
+
+
+
+/*Top level list items*/
+
+.jqueryslidemenu ul li{
+
+position: relative;
+
+display: inline;
+
+float: left;
+
+margin-left:0px;
+
+}
+
+
+
+/*Top level menu link items style*/
+
+.jqueryslidemenu ul li a{
+
+display: block;
+
+/*background: #414141; /*background of tabs (default state)*/
+
+color: white;
+
+padding: 14px 13px;
+
+/*border-right: 1px solid #778;*/
+
+/*color: #2d2b2b;*/
+
+color:#fff;
+
+text-decoration: none;
+
+text-transform:uppercase;
+
+}
+
+.jqueryslidemenu ul li a.current{
+
+	color:#ccc;
+
+}
+
+* html .jqueryslidemenu ul li a{
+
+	padding: 14px 13px 15px 13px;
+
+}
+
+
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+
+display: inline-block;
+
+}
+
+
+
+.jqueryslidemenu ul li a:link{
+
+color:#fff;
+
+}
+
+
+
+
+
+.jqueryslidemenu ul li a:hover{
+
+/*background: #e4e3cf; /*tab link background during hover state*/
+
+color: #ccc
+
+}
+
+	
+
+/*1st sub level menu*/
+
+.jqueryslidemenu ul li ul{
+
+position: absolute;
+
+left: 0;
+
+display: block;
+
+visibility: hidden;
+
+background:#c8a778;
+
+z-index:100;
+
+
+
+}
+
+
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+
+.jqueryslidemenu ul li ul li{
+
+display: list-item;
+
+float: none;
+
+list-style:none;
+
+}
+
+
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+
+.jqueryslidemenu ul li ul li ul{
+
+top: 0;
+
+border-top: 1px solid #ecede9;
+
+}
+
+
+
+/* Sub level menu links style */
+
+.jqueryslidemenu ul li ul li a{
+
+font: normal 12px Georgia, "Times New Roman", Times, serif;
+
+width: 160px; /*width of sub menus*/
+
+padding: 10px;
+
+margin: 0;
+
+border-top-width: 0;
+
+border-bottom: 1px solid #ecede9;
+
+border-left:1px solid #ecede9;
+
+border-right:1px solid #ecede9;
+
+text-transform:uppercase;
+
+}
+
+
+
+.jqueryslidemenu ul li ul li a:hover{ /*sub menus hover style*/
+
+background:#c8a778;
+
+color: #fff;
+
+}
+
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+
+
+.downarrowclass{
+
+position: absolute;
+
+top: 19px;
+
+right: 7px;
+
+}
+
+
+
+.rightarrowclass{
+
+position: absolute;
+
+top: 15px;
+
+right: 5px;
+
+}
+
+
+

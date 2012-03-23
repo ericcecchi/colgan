@@ -43,10 +43,12 @@ Version: 1.0
 	time,
 	ul { margin: 0; padding: 0; }
 	
+	address { font-style: normal; }
+	
 	/* Base */
 	
 	html { background: #3c2415; overflow-y: scroll; }
-	body { color: #333; font: 100%/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; }
+	body { color: #404135; font: 100%/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; }
 	
 	/* Block */
 	
@@ -55,11 +57,11 @@ Version: 1.0
 	h1,
 	h2,
 	h3 { font-family: "museo-slab", serif; font-weight: normal; line-height: 1; margin: 2em 0 1em; }
-	h1 { font-size: 200%; letter-spacing: -0.05em; }
+	h1 { font-size: 200%; letter-spacing: -0.05em; margin: 0 0 1em; }
 	h2 { font-size: 150%; }
 	h3 { font-size: 100%; }
 	
-	ol, ul { margin: 0 0 1.5em; }
+	ol, ul { margin: 0 1.5em 1.5em; }
 	
 	p { margin: 0 0 1.5em; }
 	
@@ -68,7 +70,11 @@ Version: 1.0
 	a { color: #3c2415; text-decoration: none; }
 	a:hover { text-decoration: underline; }
 	
-	img { border: 0; vertical-align: bottom; }
+	img { border: 0; vertical-align: bottom; max-width: 100%; }
+	
+	/* Float */
+	.float-left { float: left; }
+	.float-right { float: right; }
 	
 	/* Forms */
 	
@@ -86,20 +92,17 @@ Version: 1.0
 	
 	/* Page */
 	
-	body { background: #fff; max-width: 600px; margin: 40px auto; padding: 40px; }
+	body { background: #fff; padding: 40px; }
 	
 	/* Header */
 	
-	[role=banner] { border-bottom: 1px solid #eee; padding: 0 0 20px; }
-	[role=banner] h1 { margin: 0; }
+	[role=banner] { background: url(images/right-wheat.png) no-repeat top right; border-bottom: 1px solid #eee; padding: 0 0 20px; }
+	[role=banner] h1 { height: 75px; margin: 0; background: url(images/logo.png) no-repeat; text-indent: -9999px; }
 	
 	/* Nav */
 	
-	[role=navigation] {}
-	[role=navigation] ul { list-style-type: none; }
-	[role=navigation] li { float: left; line-height: 40px; }
-	[role=navigation] a { display: block; padding: 1em; }
-	
+	[role=navigation] { }
+		
 	/* Content */
 	
 	#content { padding: 40px 0; }
@@ -120,14 +123,13 @@ Version: 1.0
 /* 3. Respond
 ----------------------------------------------------------------------------- */
 
-@media (max-device-width: 768px), (max-width: 768px) {
-
-	body { margin: 40px; }
-
-}
-
 @media (max-device-width: 480px), (max-width: 480px) {
 
-	body { font-size: 90%; margin: 0; padding: 20px; }
+	body { font-size: 90%;}
 
 }
+
+/* 3. Front Page
+----------------------------------------------------------------------------- */
+
+  ul#market-report { list-style: none; }

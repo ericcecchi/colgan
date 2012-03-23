@@ -159,7 +159,7 @@ $images_path = 'css/'.str_replace('.css','',get_wp_options('_theme_style', 'Oran
 		$get_logo_url = get_wp_options('_logo', get_bloginfo('template_url') .'/'.$images_path.'/logo.png');
 		list($width, $height, $type, $attr) = getimagesize($get_logo_url);
 	?>
-      <h1 id="logo"><a href="<? echo get_option('siteurl'); ?>" style="height:<? echo $height; ?>px;background:url(<?php $logo_url = get_wp_options('_logo', get_bloginfo('template_url') .'/'.$images_path.'/logo.png', true); 
+      <h1 id="logo"><a href="<? echo bloginfo('url'); ?>" style="height:<? echo $height; ?>px;background:url(<?php $logo_url = get_wp_options('_logo', get_bloginfo('template_url') .'/'.$images_path.'/logo.png', true); 
 			echo $logo_url; ?>) no-repeat;"><?php bloginfo('name'); ?></a></h1>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Header Search Form") ) : ?>				
 				<!-- "Header Search Form" WIDGET-->

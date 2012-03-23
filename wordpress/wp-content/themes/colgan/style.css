@@ -48,7 +48,7 @@ Version: 1.0
 	/* Base */
 	
 	html { background: #3c2415; overflow-y: scroll; }
-	body { color: #404135; font: 100%/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; }
+	body { color: #404135; font: 100%/1.5 "proxima-nova", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility;}
 	
 	/* Block */
 	
@@ -92,7 +92,7 @@ Version: 1.0
 	
 	/* Page */
 	
-	body { background: #fff; padding: 40px; }
+	body {  width: auto; max-width: 1080px; background: #fff; margin: auto; padding: 40px; }
 	
 	/* Header */
 	

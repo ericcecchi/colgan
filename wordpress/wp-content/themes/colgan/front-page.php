@@ -14,14 +14,12 @@
 <div class="row-fluid">
   <div class="span4">
     <h2>Colgan Commodities</h2>
-    <img class="float-left" src="<?php bloginfo('template_url'); ?>/images/manPhone.jpg" alt="" />
     <p>Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market your products using the experience, knowledge and research we bring to every partnership.</p>
     <a href="/about/">About Colgan Commodities »</a>
   </div>
   
   <div class="span4">
     <h2>Commodity Trading</h2>
-    <img title="cornPic" src="<?php bloginfo('template_url'); ?>/images/cornPic.jpg" />
     <p>For any producer, commodities trading is an essential element in <a href="/commodities-trading/">hedging risk</a>. Colgan Commodities will help you develop the commodities trading portion of your ag risk management plan.</p>
     <a href="/commodities-trading/">Commodity Trading Services »</a>
   </div>

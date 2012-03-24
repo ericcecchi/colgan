@@ -19,7 +19,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<header role="banner">
-			<h1><a href="<? echo bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<a href="<? echo bloginfo('url'); ?>"><h1><?php bloginfo('name'); ?></h1></a>
 		</header>
 		<nav role="navigation" class="navbar">
       <div class="navbar-inner">
@@ -37,6 +37,7 @@
             <li><a href="/open-account/">Open Account</a></li>
             <li><a href="/contact-us/">Contact Us</a></li>
           </ul>
+          <ul class="nav pull-right"><li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">Login</a></li></ul>
   		  </div>
 		  </div>
 		</nav>

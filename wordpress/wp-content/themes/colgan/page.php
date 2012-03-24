@@ -1,7 +1,14 @@
 <?php get_header(); ?>
 
-<h1><?php the_title(); ?></h1>
-
-<?php the_post(); the_content(); ?>
+<div class="row">
+  <div class="span8">
+    <h1><?php the_title(); ?></h1>
+    <?php the_post(); the_content(); ?>
+  </div>
+  
+  <div class="span4">
+    <?php get_sidebar(); ?>
+  </div>
+</div>
 
 <?php get_footer(); ?>

@@ -2,7 +2,7 @@
 
 <div class="row-fluid">
   <div class="span4">
-    <img title="indexWheat" src="<?php bloginfo('template_url'); ?>/images/indexWheat.jpg" alt="" >
+    <img class="thumbnail" title="indexWheat" src="<?php bloginfo('template_url'); ?>/images/harvest-wheat.jpg" alt="" >
   </div>
   <div class="span8">
     <h1>Use futures and options to hedge your grain!</h1>

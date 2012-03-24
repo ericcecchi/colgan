@@ -70,7 +70,7 @@ Version: 1.0
 	a { color: #3c2415; text-decoration: none; }
 	a:hover { text-decoration: underline; }
 	
-	img { border: 0; vertical-align: bottom; max-width: 100%; }
+	img { border: 0; vertical-align: bottom; max-width: 95%; }
 	
 	/* Float */
 	.float-left { float: left; }
@@ -92,16 +92,16 @@ Version: 1.0
 	
 	/* Page */
 	
-	body {  width: auto; max-width: 1080px; background: #fff; margin: auto; padding: 40px; }
+	body { width: auto; max-width: 960px; background: #fff; margin: auto; padding: 0 40px; }
 	
 	/* Header */
 	
-	[role=banner] { background: url(images/right-wheat.png) no-repeat top right; border-bottom: 1px solid #eee; padding: 0 0 20px; }
-	[role=banner] h1 { height: 75px; margin: 0; background: url(images/logo.png) no-repeat; text-indent: -9999px; }
+	[role=banner] { border-bottom: 1px solid #eee; padding: 0 0 20px; background: url(images/right-wheat.png) no-repeat top right;  }
+	[role=banner] h1 { height: 75px; margin: 0; background: url(images/logo.png) no-repeat bottom left; text-indent: -9999px; padding-top: 20px;}
 	
 	/* Nav */
 	
-	[role=navigation] { }
+	[role=navigation] { font-size: 95% }
 		
 	/* Content */
 	

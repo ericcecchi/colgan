@@ -96,7 +96,7 @@ Version: 1.0
 	
 	/* Header */
 	
-	[role=banner] { border-bottom: 1px solid #eee; padding: 0 0 20px; background: url(images/right-wheat.png) no-repeat top right;  }
+	[role=banner] { border-bottom: 1px solid #eee; padding: 0 0 20px; background: url(images/right-wheat.png) no-repeat top right;	 }
 	[role=banner] h1 { height: 75px; margin: 0; background: url(images/logo.png) no-repeat bottom left; text-indent: -9999px; padding-top: 20px;}
 	
 	/* Nav */
@@ -121,7 +121,7 @@ Version: 1.0
 	
 	/* Front Page */
 	
-  h3 img { vertical-align:text-bottom; padding: 0 5px; }	
+	h3 img { vertical-align:text-bottom; padding: 0 5px; }	
 	
 	/* G-Forms */
 	

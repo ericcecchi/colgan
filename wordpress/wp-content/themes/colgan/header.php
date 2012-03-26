@@ -23,23 +23,21 @@
 			<a href="<? echo bloginfo('url'); ?>"><h1><?php bloginfo('name'); ?></h1></a>
 		</header>
 		<nav role="navigation" class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav">
-            <li><a href="<?php bloginfo('url') ?>">Home</a></li>
-            <li><a href="/about/">About</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Commodities Trading<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="/commodities-trading/">About Commodities Trading</a></li>
-                <li><a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a></li>
-              </ul>
-            </li>
-            <li><a href="/open-account/">Open Account</a></li>
-            <li><a href="/contact-us/">Contact Us</a></li>
-          </ul>
-          <ul class="nav pull-right"><li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">Login</a></li></ul>
-  		  </div>
-		  </div>
+			<div class="navbar-inner container">
+				<ul class="nav">
+					<li><a href="<?php bloginfo('url') ?>">Home</a></li>
+					<li><a href="/about/">About</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Commodities Trading<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/commodities-trading/">About Commodities Trading</a></li>
+							<li><a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a></li>
+						</ul>
+					</li>
+					<li><a href="/open-account/">Open Account</a></li>
+					<li><a href="/contact-us/">Contact Us</a></li>
+				</ul>
+				<ul class="nav pull-right"><li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">Login</a></li></ul>
+			</div>
 		</nav>
 		<div id="content" class="container-fluid">

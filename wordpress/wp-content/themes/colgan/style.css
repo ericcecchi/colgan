@@ -67,8 +67,8 @@ Version: 1.0
 	
 	/* Inline */
 	
-	a { color: #3c2415; text-decoration: none; }
-	a:hover { text-decoration: underline; }
+	a { color: rgba(35,90,150,1); text-decoration: none; }
+	a:hover { color: rgba(35,90,150,.8); }
 	
 	img { border: 0; vertical-align: bottom; max-width: 95%; }
 	
@@ -78,8 +78,8 @@ Version: 1.0
 	
 	/* Forms */
 	
-	label { margin: 2em 0 .5em; }
-	input, textarea { border: 1px solid #ddd; font-size: 16px; padding: 10px; }
+/* 	label { margin: 2em 0 .5em; } */
+	input, textarea {padding: 5px; }
 
 
 /* 2. Interface
@@ -121,7 +121,14 @@ Version: 1.0
 	
 	/* Front Page */
 	
-	ul#market-report { list-style: none; }
+  h3 img { vertical-align:text-bottom; padding: 0 5px; }	
+	
+	/* G-Forms */
+	
+	form ul { list-style: none; }
+	form.well { max-width: 80%; }
+	.gfield_radio label, .gfield_checkbox label { display: inline; padding-left: 18px; }
+	form.well textarea { width: 70%; }
 
 
 /* 3. Respond
@@ -130,5 +137,6 @@ Version: 1.0
 @media (max-device-width: 480px), (max-width: 480px) {
 
 	body { font-size: 90%;}
+	form.well textarea { width: 210px; }
 
 }

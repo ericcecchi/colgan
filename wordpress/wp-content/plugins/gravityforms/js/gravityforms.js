@@ -10,46 +10,7 @@ function Currency(currency){
         if(this.isNumeric(text))
             return parseFloat(text);
 
-        //converting to a string if a number as passed
-        text = text + " ";
-
-        //Removing symbol in unicode format (i.e. &#4444;)
-        text = text.replace(/&.*?;/, "", text);
-
-        //Removing symbol from text
-        text = text.replace(this.currency["symbol_right"], "");
-        text = text.replace(this.currency["symbol_left"], "");
-
-
-        //Removing all non-numeric characters
-        var clean_number = "";
-        var is_negative = false;
-        for(var i=0; i<text.length; i++){
-            var digit = text.substr(i,1);
-            if( (parseInt(digit) >= 0 && parseInt(digit) <= 9) || digit == this.currency["decimal_separator"] )
-                clean_number += digit;
-            else if(digit == '-')
-                is_negative = true;
-        }
-
-        //Removing thousand separators but keeping decimal point
-        var float_number = "";
-        var decimal_separator = this.currency && this.currency["decimal_separator"] ? this.currency["decimal_separator"] : ".";
-
-        for(var i=0; i<clean_number.length; i++)
-        {
-            var char = clean_number.substr(i,1);
-            if (char >= '0' && char <= '9')
-                float_number += char;
-            else if(char == decimal_separator){
-                float_number += ".";
-            }
-        }
-
-        if(is_negative)
-            float_number = "-" + float_number;
-
-        return this.isNumeric(float_number) ? parseFloat(float_number) : false;
+        return gformCleanNumber(text, this.currency["symbol_right"], this.currency["symbol_left"], this.currency["decimal_separator"]);
     };
 
     this.toMoney = function(number){
@@ -100,9 +61,8 @@ function Currency(currency){
     }
 
     this.isNumeric = function(number){
-        return !isNaN(parseFloat(number)) && isFinite(number);
+        return gformIsNumber(number);
     };
-
 
     this.htmlDecode = function(text) {
         var c,m,d = text;
@@ -128,6 +88,67 @@ function Currency(currency){
     };
 }
 
+function gformCleanNumber(text, symbol_right, symbol_left, decimal_separator){
+    //converting to a string if a number as passed
+    text = text + " ";
+
+    //Removing symbol in unicode format (i.e. &#4444;)
+    text = text.replace(/&.*?;/, "", text);
+
+    //Removing symbol from text
+    text = text.replace(symbol_right, "");
+    text = text.replace(symbol_left, "");
+
+
+    //Removing all non-numeric characters
+    var clean_number = "";
+    var is_negative = false;
+    for(var i=0; i<text.length; i++){
+        var digit = text.substr(i,1);
+        if( (parseInt(digit) >= 0 && parseInt(digit) <= 9) || digit == decimal_separator )
+            clean_number += digit;
+        else if(digit == '-')
+            is_negative = true;
+    }
+
+    //Removing thousand separators but keeping decimal point
+    var float_number = "";
+
+    for(var i=0; i<clean_number.length; i++)
+    {
+        var char = clean_number.substr(i,1);
+        if (char >= '0' && char <= '9')
+            float_number += char;
+        else if(char == decimal_separator){
+            float_number += ".";
+        }
+    }
+
+    if(is_negative)
+        float_number = "-" + float_number;
+
+    return gformIsNumber(float_number) ? parseFloat(float_number) : false;
+}
+
+function gformIsNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function gformIsNumeric(value, number_format){
+
+    switch(number_format){
+        case "decimal_dot" :
+            var r = new RegExp("^(-?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]+)?)$");
+            return r.test(value);
+        break;
+
+        case "decimal_comma" :
+            var r = new RegExp("^(-?[0-9]{1,3}(?:\.?[0-9]{3})*(?:,[0-9]+)?)$");
+            return r.test(value);
+        break;
+    }
+    return false;
+}
 
 //------------------------------------------------
 //---------- MULTI-PAGE --------------------------
@@ -198,8 +219,6 @@ function gformCalculateTotalPrice(formId){
     }
 }
 
-
-
 function gformGetShippingPrice(formId){
     var shippingField = jQuery(".gfield_shipping_" + formId + " input[type=\"hidden\"], .gfield_shipping_" + formId + " select, .gfield_shipping_" + formId + " input:checked");
     var shipping = 0;
@@ -213,42 +232,56 @@ function gformGetShippingPrice(formId){
     return gformToNumber(shipping);
 }
 
+function gformGetFieldId(element){
+    var id = jQuery(element).attr("id");
+    var pieces = id.split("_");
+    if(pieces.length <=0)
+        return 0;
+
+    var fieldId = pieces[pieces.length-1];
+    return fieldId;
+
+}
+
 function gformCalculateProductPrice(formId, productFieldId){
     var price = gformGetBasePrice(formId, productFieldId);
 
     var suffix = "_" + formId + "_" + productFieldId;
 
     //Drop down auto-calculating labels
-    jQuery(".gfield_option" + suffix + " select, .gfield_shipping_" + formId + " select").each(function(){
+    jQuery(".gfield_option" + suffix + ", .gfield_shipping_" + formId).find("select").each(function(){
         var selected_price = gformGetPrice(jQuery(this).val());
+        var fieldId = gformGetFieldId(this);
         jQuery(this).children("option").each(function(){
-            var label = gformGetOptionLabel(this, jQuery(this).val(), selected_price);
+            var label = gformGetOptionLabel(this, jQuery(this).val(), selected_price, formId, fieldId);
             jQuery(this).html(label);
         });
     });
 
     //Checkboxes labels with prices
-    jQuery(".gfield_option" + suffix + " .gfield_checkbox input").each(function(){
+    jQuery(".gfield_option" + suffix).find(".gfield_checkbox").find("input").each(function(){
+        var fieldId = gformGetFieldId(jQuery(this).parents(".gfield_checkbox"));
         var element = jQuery(this).next();
-        var label = gformGetOptionLabel(element, jQuery(this).val(), 0);
+        var label = gformGetOptionLabel(element, jQuery(this).val(), 0, formId, fieldId);
         element.html(label);
     });
 
     //Radio button auto-calculating lables
-    jQuery(".gfield_option" + suffix + " .gfield_radio, .gfield_shipping_" + formId + " .gfield_radio").each(function(){
+    jQuery(".gfield_option" + suffix + ", .gfield_shipping_" + formId).find(".gfield_radio").each(function(){
         var selected_price = 0;
         var selected_value = jQuery(this).find("input:checked").val();
+        var fieldId = gformGetFieldId(this);
         if(selected_value)
             selected_price = gformGetPrice(selected_value);
 
         jQuery(this).find("input").each(function(){
             var label_element = jQuery(this).next();
-            var label = gformGetOptionLabel(label_element, jQuery(this).val(), selected_price);
+            var label = gformGetOptionLabel(label_element, jQuery(this).val(), selected_price, formId, fieldId);
             label_element.html(label);
         });
     });
 
-    jQuery(".gfield_option" + suffix + " input:checked, .gfield_option" + suffix + " select").each(function(){
+    jQuery(".gfield_option" + suffix).find("input:checked, select").each(function(){
         if(!gformIsHidden(jQuery(this)))
             price += gformGetPrice(jQuery(this).val());
     });
@@ -344,18 +377,24 @@ function gformGetPriceDifference(currentPrice, newPrice){
     return price;
 }
 
-function gformGetOptionLabel(element, selected_value, current_price){
+function gformGetOptionLabel(element, selected_value, current_price, form_id, field_id){
     element = jQuery(element);
     var price = gformGetPrice(selected_value);
     var current_diff = element.attr('price');
-    var label = element.html().replace(/<span(.*)<\/span>/i, "").replace(current_diff, "");
+    var original_label = element.html().replace(/<span(.*)<\/span>/i, "").replace(current_diff, "");
 
     var diff = gformGetPriceDifference(current_price, price);
     diff = gformToNumber(diff) == 0 ? "" : " " + diff;
     element.attr('price', diff);
 
     //don't add <span> for drop down items (not supported)
-    var label = element[0].tagName.toLowerCase() == "option" ? label + " " + diff : label + "<span class='ginput_price'>" + diff + "</span>";
+    var price_label = element[0].tagName.toLowerCase() == "option" ? " " + diff : "<span class='ginput_price'>" + diff + "</span>";
+    var label = original_label + price_label;
+
+    //calling hook to allow for custom option formatting
+    if(window["gform_format_option_label"])
+        label = gform_format_option_label(label, original_label, price_label, current_price, price, form_id, field_id);
+
     return label;
 }
 
@@ -376,10 +415,6 @@ function gformGetPrice(text){
          return currency.toNumber(val[1]);
 
     return 0;
-}
-
-function gformIsNumber(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 function gformRegisterPriceField(item){
@@ -566,4 +601,19 @@ function gformFindCardType(value) {
     }
 
     return validCardTypes.length == 1 ? validCardTypes[0].toLowerCase() : false;
+}
+
+
+//----------------------------------------
+//------ CHOSEN DROP DOWN FIELD ----------
+//----------------------------------------
+
+function gformInitChosenFields(fieldList, noResultsText){
+    return jQuery(fieldList).each(function(){
+        var element = jQuery(this);
+        //only initialize once
+        if(element.is(":visible") && element.siblings(".chzn-container").length == 0){
+            jQuery(this).chosen({no_results_text: noResultsText});
+        }
+    });
 }

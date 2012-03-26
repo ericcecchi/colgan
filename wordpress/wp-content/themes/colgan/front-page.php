@@ -2,7 +2,7 @@
 
 <div class="row-fluid">
 	<div class="span4">
-		<img class="thumbnail" title="indexWheat" src="<?php bloginfo('template_url'); ?>/images/harvest-wheat.jpg" alt="" >
+		<img title="indexWheat" src="<?php bloginfo('template_url'); ?>/images/harvest-wheat.jpg" alt="" >
 	</div>
 	<div class="span8">
 		<h1>Use futures and options to hedge your grain!</h1>
@@ -14,7 +14,7 @@
 <div class="row-fluid">
 	<div class="span4">
 		<h2>Colgan Commodities</h2>
-		<p>Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market your products using the experience, knowledge and research we bring to every partnership.</p>
+		<p>Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market products using the experience, knowledge & research we bring to every partnership.</p>
 		<a href="/about/"><h3><img title="calendar" src="<?php bloginfo('template_url'); ?>/images/glyphicons_195_circle_info.png" />About Colgan Commodities</h3></a>
 	</div>
 	
@@ -25,8 +25,8 @@
 	</div>
 	
 	<div class="span4">
-		<h2>Agriculture Market Report</h2>
-		<p>All clients receive the <a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a>, an audio broadcast sent to your phone throughout the day providing you with timely market updates. Listen to a past report and sign-up for a FREE 30-day trial!</p>
+		<h2>Ag Market Report</h2>
+		<p>All clients receive the <a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a>, an audio broadcast sent to your phone throughout the day providing you with timely market updates. Listen to a past report and sign-up for a FREE 30-day trial!</p>
 		<a href="/commodities-trading/colgan-audio-cast/"><h3><img title="calendar" src="<?php bloginfo('template_url'); ?>/images/glyphicons_045_calendar.png" /> Free 30-day Trial</h3></a>
 	</div>
 </div>

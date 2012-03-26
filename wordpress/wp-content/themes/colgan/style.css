@@ -57,7 +57,7 @@ Version: 1.0
 	h1,
 	h2,
 	h3 { font-family: "museo-slab", serif; font-weight: normal; line-height: 1; margin: 2em 0 1em; }
-	h1 { font-size: 200%; letter-spacing: -0.05em; margin: 0 0 1em; }
+	h1 { font-size: 300%; letter-spacing: -0.05em; margin: 0 0 .5em; }
 	h2 { font-size: 150%; }
 	h3 { font-size: 100%; }
 	
@@ -67,10 +67,11 @@ Version: 1.0
 	
 	/* Inline */
 	
-	a { color: rgba(35,90,150,1); text-decoration: none; }
+	a { color: rgb(35,90,150); text-decoration: none; }
 	a:hover { color: rgba(35,90,150,.8); }
 	
-	img { border: 0; vertical-align: bottom; max-width: 95%; }
+	img { max-width: 100%; border: 0; vertical-align: bottom;
+		border-radius: 4px; }
 	
 	/* Float */
 	.float-left { float: left; }
@@ -133,6 +134,13 @@ Version: 1.0
 
 /* 3. Respond
 ----------------------------------------------------------------------------- */
+
+@media (max-device-width: 768px), (max-width: 768px) {
+
+	[role=banner] { background: none; }
+	[title=indexWheat] { margin: 0 0 40px; }
+
+}
 
 @media (max-device-width: 480px), (max-width: 480px) {
 

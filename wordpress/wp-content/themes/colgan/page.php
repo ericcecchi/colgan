@@ -1,14 +1,12 @@
 <?php get_header(); ?>
 
 <div class="row-fluid">
-	<div class="span8">
+	<article class="span8" role="main">
 		<h1><?php the_title(); ?></h1>
 		<?php the_post(); the_content(); ?>
-	</div>
+	</article>
 	
-	<div class="span4">
-		<?php get_sidebar(); ?>
-	</div>
+	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

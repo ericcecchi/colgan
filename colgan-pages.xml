@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/3.3.1" created="2012-03-23 05:10" -->
+<!-- generator="WordPress/3.3.1" created="2012-03-27 02:30" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.1/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Colgan Commodities</title>
 	<link>http://colgan.dev</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Fri, 23 Mar 2012 05:10:52 +0000</pubDate>
+	<pubDate>Tue, 27 Mar 2012 02:30:45 +0000</pubDate>
 	<language>en</language>
 	<wp:wxr_version>1.1</wp:wxr_version>
 	<wp:base_site_url>http://colgan.dev</wp:base_site_url>
@@ -99,23 +99,24 @@ I can be reached by phone at <a href="tel:8006762789">800-676-2789</a>, by email
 		<dc:creator>admin</dc:creator>
 		<guid isPermaLink="false">http://colgancommodities.com/</guid>
 		<description></description>
-		<content:encoded><![CDATA[<h2>A risk management tool for every producer.</h2>
-The current business environment is full of risk. Some we can see, and others we can’t.  As a producer you need to use every tool at your disposal to reduce the price risk to your business. Commodity trading is an integral part of your agricultural marketing and risk management toolkit.
+		<content:encoded><![CDATA[<img class="thumbnail aligncenter" src="http://colgan.dev/wordpress/wp-content/uploads/2012/03/1024159748_3bf3edac00_o.jpeg" alt="" title="sunset-corn" width="800" height="600" />
+<h2>A risk management tool for every producer.</h2>
+The current business environment is full of risk. Some we can see, and others we can’t. As a producer you need to use every tool at your disposal to reduce the price risk to your business. Commodity trading is an integral part of your agricultural marketing and risk management toolkit.
 
-When trading commodities, each day you’ll know exactly where you stand.  Do you really know the financial status of your local elevator, ethanol plant, feed plant or feedlot? In one day you can liquidate your positions and have your money deposited back into your account.  Can you do that with a cash sale to your local elevator or ethanol plant?
+When trading commodities, each day you’ll know exactly where you stand. Do you really know the financial status of your local elevator, ethanol plant, feed plant or feedlot? In one day you can liquidate your positions and have your money deposited back into your account. Can you do that with a cash sale to your local elevator or ethanol plant?
 
-Use the futures and options to hedge your grain and improve your marketing for the coming year.  Don't get locked into a single market.  Go where you want, when you want, by hedging.
+Use the futures and options to hedge your grain and improve your marketing for the coming year. Don't get locked into a single market. Go where you want, when you want, by hedging.
 <h3>Hedge Program</h3>
-Colgan Commodities specializes in working with agricultural producers to reduce your price risk. and hedge markets with commodities trading. I can customize a hedge program, encompassing both futures and options, to meet your individual needs.
+Colgan Commodities specializes in working with agricultural producers to reduce your price risk and hedge markets with commodities trading. I can customize a hedge program, encompassing both futures and options, to meet your individual needs.
 <ul>
-	<li>Every hedger has a different goal.  I can customize a hedge program to fit your business plan.</li>
+	<li>Every hedger has a different goal. I can customize a hedge program to fit your business plan.</li>
 	<li>I have over 30 years of grain merchandising and hedging experience</li>
-	<li>My client base stretches from Ohio to Nebraska and from Wisconsin to Kansas.  I also have clients in Canada and overseas.  I talk with clients through out the entire grain belt and overseas.  I am not looking out my own back door.</li>
+	<li>My client base stretches from Ohio to Nebraska and from Wisconsin to Kansas. I also have clients in Canada and overseas. I talk with clients through out the entire grain belt and overseas. I am not looking out my own back door.</li>
 </ul>
 Additionally, all Colgan Commodities clients will receive the <a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a>—a daily periodic voicemail sent to your phone with brief market updates, insight, and commentary.
 
-<a href="/contact-us/">Free Consultation - Contact Us »</a>
-<a href="/commodities-trading/colgan-audio-cast/">Free 30-day trial of Colgan AudioCast »</a>]]></content:encoded>
+<a href="/contact-us/">Free Consultation - Contact Us ➟</a>
+<a href="/commodities-trading/colgan-audio-cast/">Free 30-day trial of Colgan AudioCast ➟</a>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>8</wp:post_id>
 		<wp:post_date>2010-09-13 13:17:01</wp:post_date>
@@ -157,9 +158,7 @@ Additionally, all Colgan Commodities clients will receive the <a href="/commodit
 		<dc:creator>admin</dc:creator>
 		<guid isPermaLink="false">http://colgancommodities.com/</guid>
 		<description></description>
-		<content:encoded><![CDATA[<div id="inner">
-
-<p>The <strong>Colgan AudioCast</strong> is a daily, periodic voicemail sent to your phone with brief market updates, insight, and commentary. Produced and delivered by Marty Colgan, this broadcast contacts everyone simultaneously.  No matter if your name starts with A or Z, everyone is called at the same time.  Both large and small clients get the same information immediately.  Each call lasts a maximum of 90 seconds making it short, concise and to the point.  Since it is a recording, you can listen at your convenience.</p>
+		<content:encoded><![CDATA[<p>The <strong>Colgan AudioCast</strong> is a daily, periodic voicemail sent to your phone with brief market updates, insight, and commentary. Produced and delivered by Marty Colgan, this broadcast contacts everyone simultaneously. No matter if your name starts with A or Z, everyone is called at the same time. Both large and small clients get the same information immediately. Each call lasts a maximum of 90 seconds making it short, concise and to the point. Since it is a recording, you can listen at your convenience.</p>
 
 <p>This exclusive market commentary is <strong>free for all clients</strong>, or available for $240/year. </p>
 <h3>Morning sample</h3>
@@ -168,9 +167,7 @@ Additionally, all Colgan Commodities clients will receive the <a href="/commodit
 [cincopa AAHAjdqbto4U]
 
 <h3>Sign-up for a FREE 30-day trial or purchase now!</h3>
-[contact-form 5 "Contact form 2"]
-
-</div>]]></content:encoded>
+[gravityform id="1" name="Audiocast Signup" title="false" description="false" ajax="true"] ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>11</wp:post_id>
 		<wp:post_date>2010-09-13 13:20:50</wp:post_date>
@@ -242,9 +239,7 @@ Additionally, all Colgan Commodities clients will receive the <a href="/commodit
 		<dc:creator>admin</dc:creator>
 		<guid isPermaLink="false">http://colgancommodities.com/</guid>
 		<description></description>
-		<content:encoded><![CDATA[<div id="inner">
-
-Questions about our services? We look forward to answering them!
+		<content:encoded><![CDATA[Questions about our services? We look forward to answering them!
 <address>
 Colgan Commodities LLC
 453 South Vermont  Suite G
@@ -254,9 +249,8 @@ Fax: (847) 991-2593
 </address>
 <a href="http://maps.google.com/maps?hl=en&amp;q=453+Vermont+St,+Palatine+IL+60067&amp;ie=UTF8&amp;hq=&amp;hnear=453+S+Vermont+St,+Palatine,+Cook,+Illinois+60067&amp;gl=us&amp;ei=A7eTTI69MMGblgfUv-SoCg&amp;sqi=2&amp;ved=0CBMQ8gEwAA&amp;source=embed&amp;ll=42.099942,-88.036623&amp;spn=0.035727,0.090895&amp;z=14">View Map</a>
 
-[contact-form 1 "Contact form 1"]
-
-</div>]]></content:encoded>
+<h2>Send us a message</h2>
+[gravityform id="2" name="Contact Us" title="false" description="false" ajax="true"] ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>17</wp:post_id>
 		<wp:post_date>2010-09-13 13:21:39</wp:post_date>

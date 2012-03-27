@@ -128,6 +128,7 @@ Version: 1.0
 	/* G-Forms */
 	
 	form ul { list-style: none; }
+	[role=main] form ul li { margin: 0 0 8px 0; }
 	form.well { max-width: 80%; }
 	.gfield_radio label, .gfield_checkbox label { display: inline; padding-left: 18px; }
 	form.well textarea { width: 70%; }
@@ -149,6 +150,7 @@ Version: 1.0
 
 	body { font-size: 90%; padding: 0 20px 20px; }
 	h1 { font-size: 180%; }
+	[role=banner] h1 { font-size: 200%; }
 	#content { padding: 20px 0; }
 	[title=indexWheat] { margin: 0 0 20px; }
 	form.well textarea { width: 210px; }
@@ -163,6 +165,6 @@ Version: 1.0
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
 
-	[role=banner] h1 a { background-size: 50%; }
+	[role=banner] h1 a { background-size: 75px; }
 
 }

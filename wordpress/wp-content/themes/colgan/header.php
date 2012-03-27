@@ -5,7 +5,7 @@
 		<title><?php bloginfo('name'); ?></title>
 		<meta name="author" content="Marty Colgan">
 		<meta name="description" content="Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market their products.">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 		<script src="<?php bloginfo('template_url'); ?>/js/jquery.js"></script>
@@ -33,7 +33,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<header role="banner">
-			<a href="<? echo bloginfo('url'); ?>"><h1><?php bloginfo('name'); ?></h1></a>
+			<h1><a href="<? echo bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		</header>
 		<nav role="navigation" class="navbar">
 			<div class="navbar-inner container">

@@ -97,8 +97,9 @@ Version: 1.0
 	
 	/* Header */
 	
-	[role=banner] { border-bottom: 1px solid #eee; padding: 0 0 20px; background: url(images/right-wheat.png) no-repeat top right;	 }
-	[role=banner] h1 { height: 75px; margin: 0; background: url(images/logo.png) no-repeat bottom left; text-indent: -9999px; padding-top: 20px;}
+	[role=banner] { background: url(images/right-wheat.png) no-repeat top right; border-bottom: 1px solid #eee; padding: 20px 0; }
+	[role=banner] h1 { font-size: 200%; line-height: 76px; margin: 0; }
+	[role=banner] h1 a { height: 73px; background: url(images/logomark.png) no-repeat; color: #3c2415; display: block; padding: 0 0 0 110px; }
 	
 	/* Nav */
 	
@@ -108,7 +109,7 @@ Version: 1.0
 	
 	#content { padding: 40px 0; }
 	
-	[role=main] {}
+	[role=main] li { margin: 0 0 0 2em; }
 	
 	/* Sidebar */
 	
@@ -122,7 +123,7 @@ Version: 1.0
 	
 	/* Front Page */
 	
-	h3 img { vertical-align:text-bottom; padding: 0 5px; }	
+	h3 img { vertical-align:text-bottom; padding: 0 5px; }
 	
 	/* G-Forms */
 	
@@ -138,13 +139,30 @@ Version: 1.0
 @media (max-device-width: 768px), (max-width: 768px) {
 
 	[role=banner] { background: none; }
+	[role=banner] h1 { font-size: 150%; line-height: 1; text-align: center; }
+	[role=banner] h1 a { height: auto; background-position: top; padding: 80px 0 0; }
 	[title=indexWheat] { margin: 0 0 40px; }
 
 }
 
 @media (max-device-width: 480px), (max-width: 480px) {
 
-	body { font-size: 90%;}
+	body { font-size: 90%; padding: 0 20px 20px; }
+	h1 { font-size: 180%; }
+	#content { padding: 20px 0; }
+	[title=indexWheat] { margin: 0 0 20px; }
 	form.well textarea { width: 210px; }
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+
+	[role=banner] h1 a { background-size: 75%; }
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+
+	[role=banner] h1 a { background-size: 50%; }
 
 }

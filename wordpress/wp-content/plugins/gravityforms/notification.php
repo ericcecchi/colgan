@@ -287,13 +287,8 @@ Class GFNotification{
 
                 <h2><?php _e("Notifications", "gravityforms"); ?> : <?php echo esc_html($form["title"])?></h2>
 
-                <?php
+                <?php RGForms::top_toolbar() ?>
 
-                RGForms::top_toolbar();
-
-                $has_editor = GFCommon::is_wp_version("3.3");
-
-                ?>
                 <div id="poststuff" class="metabox-holder">
                     <div id="submitdiv" class="stuffbox">
                         <h3><span class="hndle"><?php _e("Notification to Administrator", "gravityforms"); ?></span></h3>
@@ -501,7 +496,7 @@ Class GFNotification{
                                                         <?php _e("Message", "gravityforms"); ?><span class="gfield_required">*</span>
                                                     </label>
                                                     <?php
-                                                    if($has_editor){
+                                                    if(GFCommon::is_wp_version("3.3")){
                                                         wp_editor($form["notification"]["message"], "form_notification_message", array("autop"=>false));
                                                     }
                                                     else{
@@ -514,9 +509,9 @@ Class GFNotification{
                                                     <?php } ?>
                                                 </div>
                                             </li>
-                                            <li <?php echo $has_editor ? "style='display:none;'" : ""?>>
+                                            <li>
                                                 <div>
-                                                    <input type="checkbox" name="form_notification_disable_autoformat" id="form_notification_disable_autoformat" value="1" <?php echo !empty($form["notification"]["disableAutoformat"]) || $has_editor ? "checked='checked'" : "" ?>/>
+                                                    <input type="checkbox" name="form_notification_disable_autoformat" id="form_notification_disable_autoformat" value="1" <?php echo empty($form["notification"]["disableAutoformat"]) ? "" : "checked='checked'" ?>/>
                                                     <label for="form_notification_disable_autoformat" class="inline">
                                                         <?php _e("Disable Auto-formatting", "gravityforms"); ?>
                                                         <?php gform_tooltip("notification_autoformat") ?>
@@ -631,7 +626,7 @@ Class GFNotification{
                                                             <?php _e("Message", "gravityforms"); ?><span class="gfield_required">*</span>
                                                         </label>
                                                         <?php
-                                                        if($has_editor){
+                                                        if(GFCommon::is_wp_version("3.3")){
                                                             wp_editor(rgget("message", $form["autoResponder"]), "form_autoresponder_message", array("autop"=>false));
                                                         }
                                                         else{
@@ -645,9 +640,9 @@ Class GFNotification{
                                                         <?php } ?>
                                                     </div>
                                                 </li>
-                                                <li <?php echo $has_editor ? "style='display:none;'" : ""?>>
+                                                <li>
                                                     <div>
-                                                        <input type="checkbox" name="form_autoresponder_disable_autoformat" id="form_autoresponder_disable_autoformat" value="1" <?php echo !rgempty("disableAutoformat", $form["autoResponder"]) || $has_editor ? "checked='checked'" : "" ?>/>
+                                                        <input type="checkbox" name="form_autoresponder_disable_autoformat" id="form_autoresponder_disable_autoformat" value="1" <?php echo rgempty("disableAutoformat", $form["autoResponder"]) ? "" : "checked='checked'" ?>/>
                                                         <label for="form_notification_disable_autoformat" class="inline">
                                                             <?php _e("Disable Auto-formatting", "gravityforms"); ?>
                                                             <?php gform_tooltip("notification_autoformat") ?>

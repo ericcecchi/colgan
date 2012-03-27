@@ -56,7 +56,7 @@ Version: 1.0
 	
 	h1,
 	h2,
-	h3 { font-family: "museo-slab", serif; font-weight: normal; line-height: 1; margin: 2em 0 1em; }
+	h3 { font-family: "museo-slab", Georgia, serif; font-weight: normal; line-height: 1; margin: 2em 0 1em; }
 	h1 { font-size: 300%; letter-spacing: -0.05em; margin: 0 0 .5em; }
 	h2 { font-size: 150%; }
 	h3 { font-size: 100%; }
@@ -97,9 +97,9 @@ Version: 1.0
 	
 	/* Header */
 	
-	[role=banner] { background: url(images/right-wheat.png) no-repeat top right; border-bottom: 1px solid #eee; padding: 20px 0; }
+	[role=banner] { background: url(../images/right-wheat.png) no-repeat top right; border-bottom: 1px solid #eee; padding: 20px 0; }
 	[role=banner] h1 { font-size: 200%; line-height: 76px; margin: 0; }
-	[role=banner] h1 a { height: 73px; background: url(images/logomark.png) no-repeat; color: #3c2415; display: block; padding: 0 0 0 110px; }
+	[role=banner] h1 a { height: 73px; background: url(../images/logomark.png) no-repeat; color: #3c2415; display: block; padding: 0 0 0 110px; }
 	
 	/* Nav */
 	

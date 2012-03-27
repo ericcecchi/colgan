@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------------------------------------------
+Version 1.6.3.3.4
+    - Updated Auto-format option on the notification page so that it is always visible.
+
+-------------------------------------------------------------------------------------------------------------------
+Version 1.6.3.3.3
+    - Fixed issue with gform_get_input_value being fired inconsistently for leads with long text
+
+-------------------------------------------------------------------------------------------------------------------
 Version 1.6.3.3.2
     - Fixed issue with form editor creating javascript errors on sites with older versions of jQuery
 

@@ -1,7 +1,7 @@
 <?php
 class GFCommon{
 
-    public static $version = "1.6.3.3.2";
+    public static $version = "1.6.3.3.4";
     public static $tab_index = 1;
 
     public static function get_selection_fields($form, $selected_field_id){

@@ -6,7 +6,7 @@
 		<!-- Le javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="<?php bloginfo('template_url'); ?>/js/bootstrap.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 		
 		  var _gaq = _gaq || [];

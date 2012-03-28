@@ -14,7 +14,7 @@
 <div class="row-fluid">
 	<div class="span4">
 		<h2>Colgan Commodities</h2>
-		<p>Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market products using the experience, knowledge & research we bring to every partnership.</p>
+		<p>Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market products using the experience, knowledge and research we bring to every partnership.</p>
 		<a href="/about/"><h3><img title="calendar" src="<?php bloginfo('template_url'); ?>/images/glyphicons_195_circle_info.png" />About Colgan Commodities</h3></a>
 	</div>
 	

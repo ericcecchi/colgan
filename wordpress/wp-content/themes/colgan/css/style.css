@@ -89,7 +89,7 @@ Version: 1.0
 	/* RootClear Floats */
 	
 	[role=navigation] ul:after,
-	#content:after { height: 0; clear: both; content: "\0020"; display: block; visibility: hidden; }
+	#content:after, .clearfix:after { height: 0; clear: both; content: "\0020"; display: block; visibility: hidden; }
 	
 	/* Page */
 	
@@ -110,10 +110,11 @@ Version: 1.0
 	#content { padding: 40px 0; }
 	
 	[role=main] li { margin: 0 0 0 2em; }
+	[role=main] img { margin: 10px; }
 	
 	/* Sidebar */
 	
-	[role=complementary] {}
+	[role=complementary] { }
 	
 	/* Footer */
 	
@@ -143,6 +144,7 @@ Version: 1.0
 	[role=banner] h1 { font-size: 150%; line-height: 1; text-align: center; }
 	[role=banner] h1 a { height: auto; background-position: top; padding: 80px 0 0; }
 	[title=indexWheat] { margin: 0 0 40px; }
+	.skyscraper { display: none; }
 
 }
 

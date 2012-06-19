@@ -7,7 +7,7 @@
 		<meta name="description" content="Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market their products.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.min.css">
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 		
 	  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -38,6 +38,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/commodities-trading/">About Commodities Trading</a></li>
 							<li><a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a></li>
+							<li><a href="/audio">Audio Commentaries</a></li>
 						</ul>
 					</li>
 					<li><a href="/open-account/">Open Account</a></li>

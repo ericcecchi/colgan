@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/3.3.1" created="2012-03-28 18:04" -->
+<!-- generator="WordPress/3.3.1" created="2012-04-09 22:48" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.1/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Colgan Commodities</title>
 	<link>http://beta.colgancommodities.com</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Wed, 28 Mar 2012 18:04:52 +0000</pubDate>
+	<pubDate>Mon, 09 Apr 2012 22:48:36 +0000</pubDate>
 	<language>en</language>
 	<wp:wxr_version>1.1</wp:wxr_version>
 	<wp:base_site_url>http://beta.colgancommodities.com</wp:base_site_url>
@@ -47,13 +47,13 @@
 		<dc:creator>admin</dc:creator>
 		<guid isPermaLink="false">http://colgancommodities.com/?page_id=2</guid>
 		<description></description>
-		<content:encoded><![CDATA[<img src="/wordpress/wp-content/themes/colgan/images/corn-hdr.jpg" />
+		<content:encoded><![CDATA[<img class="left-align" src="/wordpress/wp-content/themes/colgan/images/corn-hdr.jpg" />
 <h2>A Futures and Commodities Broker<br />Specializing in Hedging Risk</h2>
-<a href="http://www.colgancommodities.com">Colgan Commodities</a> is a futures and commodities brokerage firm specializing in working with agricultural producers to help them hedge price risk. Our mission is to provide you with the tools you need to market your products using the experience, knowledge and research we bring to every partnership. As an Guaranteed Independent Broker of ADM Investor Services Inc., you’ll receive the stability of one of the largest clearing firms along with the research, technology and benefits they provide—with the personal service of Marty Colgan and the team at Colgan Commodities. Learn more about <a href="http://colgancommodities.com/commodities-trading/">our services</a> and we look forward to learning more about your needs.
+<a href="http://www.colgancommodities.com">Colgan Commodities</a> is a futures and commodities brokerage firm specializing in working with agricultural producers to help them hedge price risk. Our mission is to provide you with the tools you need to market your products using the experience, knowledge and research we bring to every partnership. As an Guaranteed Introducing Broker of ADM Investor Services Inc., you’ll receive the stability of one of the largest clearing firms along with the research, technology and benefits they provide—with the personal service of Marty Colgan and the team at Colgan Commodities. Learn more about <a href="http://colgancommodities.com/commodities-trading/">our services</a> and we look forward to learning more about your needs.
 <h3>Marty Colgan</h3>
 <img class="alignleft" style="margin-left: 5px; margin-right: 5px;" title="Marty Colgan" src="/wordpress/wp-content/themes/colgan/images/manPhone.jpg" alt="" width="93" height="113" align="left" />I grew up in Wyoming, Illinois (near Peoria). My agricultural experience started behind the parts counter of my father’s John Deere dealership. I attended the University of Illinois and majored in Agricultural Business. After college, I spent eight years in the cash grain industry beginning with Pillsbury as a country elevator merchandiser and worked my way up to managing one of their Mississippi River terminals that handled 25 million bushels per year. I also traded barge freight for Ferruzzi in New Orleans and West coast grain markets for Scoular Grain.
 
-Today, as your commodities broker, I bring more than 20 years of brokerage experience working primarily with producers to help hedge their risk and build their business. I have worked with some of the largest brokerage firms including Pillsbury Commodity Services, Linnco, REFCO, and MF Global, before establishing Colgan Commodities in 2008 as a Guaranteed Independent Broker of ADM Investor Services Inc. You’ll find that I am a dedicated, competent, and highly ethical commodity futures broker who will work closely with you to earn and grow your business.
+Today, as your commodities broker, I bring more than 20 years of brokerage experience working primarily with producers to help hedge their risk and build their business. I have worked with some of the largest brokerage firms including Pillsbury Commodity Services, Linnco, REFCO, and MF Global, before establishing Colgan Commodities in 2008 as a Guaranteed Introducing Broker of ADM Investor Services Inc. You’ll find that I am a dedicated, competent, and highly ethical commodity futures broker who will work closely with you to earn and grow your business.
 
 I can be reached by phone at <a href="tel:8006762789">800-676-2789</a>, by email at: <a href="mailto:marty@colgancommodities.com">marty@colgancommodities.com</a> and by Yahoo IM at: colgancommodities
 
@@ -99,7 +99,7 @@ I can be reached by phone at <a href="tel:8006762789">800-676-2789</a>, by email
 		<dc:creator>admin</dc:creator>
 		<guid isPermaLink="false">http://colgancommodities.com/</guid>
 		<description></description>
-		<content:encoded><![CDATA[<img src="/wordpress/wp-content/themes/colgan/images/corn-dusk.jpg"  />
+		<content:encoded><![CDATA[<img class="left-align" src="/wordpress/wp-content/themes/colgan/images/corn-dusk.jpg"  />
 <h2>A risk management tool for every producer.</h2>
 The current business environment is full of risk. Some we can see, and others we can’t. As a producer you need to use every tool at your disposal to reduce the price risk to your business. Commodity trading is an integral part of your agricultural marketing and risk management toolkit.
 
@@ -111,7 +111,7 @@ Colgan Commodities specializes in working with agricultural producers to reduce 
 <ul>
 	<li>Every hedger has a different goal. I can customize a hedge program to fit your business plan.</li>
 	<li>I have over 30 years of grain merchandising and hedging experience</li>
-	<li>My client base stretches from Ohio to Nebraska and from Wisconsin to Kansas. I also have clients in Canada and overseas. I talk with clients through out the entire grain belt and overseas. I am not looking out my own back door.</li>
+	<li>My client base stretches from Ohio to Nebraska and from Wisconsin to Kansas. I talk with clients through out the entire grain belt and overseas. I am not looking out my own back door.</li>
 </ul>
 Additionally, all Colgan Commodities clients will receive the <a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a>—a daily periodic voicemail sent to your phone with brief market updates, insight, and commentary.
 
@@ -162,7 +162,7 @@ Additionally, all Colgan Commodities clients will receive the <a href="/commodit
 
 This exclusive market commentary is <strong>free for all clients</strong>, or available for $240/year.
 <h3>Morning sample</h3>
-http://beta.colgancommodities.com/wordpress/wp-content/uploads/2012/03/2012-03-27-Morning-Sample.mp3
+http://beta.colgancommodities.com/wordpress/wp-content/uploads/2012/04/2012-03-30-Morning-Sample.mp3
 <h3>Afternoon sample</h3>
 http://beta.colgancommodities.com/wordpress/wp-content/uploads/2012/03/2012-03-27-Afternoon-Sample.mp3
 <h3>Sign-up for a FREE 30-day trial or purchase now!</h3>
@@ -196,7 +196,7 @@ http://beta.colgancommodities.com/wordpress/wp-content/uploads/2012/03/2012-03-2
 		<dc:creator>admin</dc:creator>
 		<guid isPermaLink="false">http://colgancommodities.com/</guid>
 		<description></description>
-		<content:encoded><![CDATA[<img src="/wordpress/wp-content/themes/colgan/images/cattle.jpg" />
+		<content:encoded><![CDATA[<img class="left-align" src="/wordpress/wp-content/themes/colgan/images/cattle.jpg" />
 <p>It's easy to get your account open, just follow the two steps below.</p>
 <h3>1. Complete Your Application</h3>
 <p>There are two easy ways to open an account:
@@ -240,7 +240,7 @@ http://beta.colgancommodities.com/wordpress/wp-content/uploads/2012/03/2012-03-2
 		<guid isPermaLink="false">http://colgancommodities.com/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Questions about our services? We look forward to answering them!
-<img style="margin: 10px 20px 0 0;" class="float-left" src="/wordpress/wp-content/themes/colgan/images/pasture.jpg" width="240" />
+<img class="float-left left-align" style="margin: 10px 20px 0 0;" src="/wordpress/wp-content/themes/colgan/images/pasture.jpg" width="240" />
 <address class="clearfix">
 Colgan Commodities LLC
 453 South Vermont  Suite G

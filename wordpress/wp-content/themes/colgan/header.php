@@ -11,7 +11,7 @@
 		
 	  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	  <script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.7.1.min.js"><\/script>')</script>
+	  <script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/jquery.js"><\/script>')</script>
 	  
 		<!-- Typekit -->
 		<script src="//use.typekit.com/vpn3lfq.js"></script>
@@ -38,7 +38,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/commodities-trading/">About Commodities Trading</a></li>
 							<li><a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a></li>
-							<li><a href="/audio">Audio Commentaries</a></li>
+							<li><a href="/commentaries/">Audio Commentaries</a></li>
 						</ul>
 					</li>
 					<li><a href="/open-account/">Open Account</a></li>

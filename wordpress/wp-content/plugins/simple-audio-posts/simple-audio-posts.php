@@ -112,26 +112,40 @@ add_action( 'save_post', 'audio_post_save_postdata' );
 
 /* When the post is saved, save our custom data */
 function audio_post_save_postdata( $post_id ) {
+  global $post;
+
+  if(strtolower($_POST['post_type']) === 'page') {
+      if(!current_user_can('edit_page', $post_id)) {
+          return $post_id;
+      }
+  }
+  else {
+      if(!current_user_can('edit_post', $post_id)) {
+          return $post_id;
+      }
+  }
+
 	if ( !empty($_FILES['ap_file']['name'] ) ) {
-	
+    $file   = $_FILES['ap_file'];
+		
 		/* Hijack the Wordpress file uploader */
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 		$override['action'] = 'editpost';		
-		$uploaded_file = wp_handle_upload($_FILES['ap_file'], $override);
+		$uploaded_file = wp_handle_upload($file, $override);
 		
-		$wp_filetype = wp_check_filetype($_FILES['ap_file'], null );
+		$wp_filetype = wp_check_filetype($file['name'], null );
 		$attachment = array(
 					     'guid' => $uploaded_file['url'], 
 							 'post_mime_type' => $wp_filetype['type'],
-							 'post_title' => $_FILES['ap_file']['name'],
+							 'post_title' => $file['name'],
 							 'post_content' => '',
 							 'post_status' => 'inherit'
 		);
-		$attach_id = wp_insert_attachment( $attachment, $_FILES['ap_file']['file'], $post_id );
+		$attach_id = wp_insert_attachment( $attachment, $file['file'], $post_id );
 	  // you must first include the image.php file
 	  // for the function wp_generate_attachment_metadata() to work
 	  require_once(ABSPATH . 'wp-admin/includes/image.php');
-	  $attach_data = wp_generate_attachment_metadata( $attach_id, $_FILES['ap_file']['file'] );
+	  $attach_data = wp_generate_attachment_metadata( $attach_id, $file['file'] );
 	  wp_update_attachment_metadata( $attach_id, $attach_data );
 	  update_post_meta($post_id, "ap_url", $uploaded_file['url']);
   }

@@ -10,7 +10,7 @@ get_header(); ?>
 		<?php the_post(); the_content(); ?>
 		<?php
 			$cat_args = array(
-		  'orderby' => 'name',
+		  'orderby' => 'slug',
 		  'order' => 'ASC',
 		  'child_of' => 0
 		);
@@ -59,7 +59,7 @@ get_header(); ?>
 		</table>
 		<?php } //each category ?> 
 		<?php if (function_exists("pagination")) {
-			pagination($loop->max_num_pages); 
+			pagination($loop->max_num_pages,2); 
 		} ?>
 	</article>
 	

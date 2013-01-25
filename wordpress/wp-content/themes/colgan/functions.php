@@ -1,5 +1,11 @@
 <?php
 
+add_action( 'wp_print_styles', 'my_styles' );
+
+function my_styles() {
+  wp_deregister_style( 'wp-members' );
+}
+
 // Enable custom menus.
 function enable_menus() {
 	register_nav_menus( array(

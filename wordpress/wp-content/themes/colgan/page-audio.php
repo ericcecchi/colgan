@@ -18,7 +18,7 @@ get_header(); ?>
 		$categories =   get_categories($cat_args); 
 		
 		foreach($categories as $category) {
-				if ($category->name == 'Uncategorized' or $category->name == 'Audio') {continue;}
+				if ($category->name == 'Uncategorized' or $category->name == 'Audio' or $category->name == 'Snap Shot Tour') {continue;}
 		    echo '<h2>' . $category->name . '</h2>';
 		
 		     $post_args = array(
@@ -47,9 +47,7 @@ get_header(); ?>
 				<tr>
 					<td><?php echo get_the_date(); ?></td>
 					<td>
-						<?php if (function_exists("audio_player")) {
-							audio_player($url); 
-						} ?>
+						<?php echo do_shortcode("[audio src=\"{$url}\" volume=\"false\" width=\"200\"]"); ?>
 					</td>
 					<td><a href="<?php echo $url; ?>">Download</a></td>
 				</tr>

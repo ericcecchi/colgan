@@ -483,7 +483,6 @@ function wpmem_inc_registration_NEW( $toggle = 'new', $heading = '' )
 
 	$form = $form . '<input name="redirect_to" type="hidden" value="' . get_permalink() . '" />
 		<div class="button_div">
-			<input name="reset" type="reset" value="' . __( 'Clear Form', 'wp-members' ) . '" class="buttons" />
 			<input name="submit" type="submit" value="' . __( 'Submit', 'wp-members' ) . '" class="buttons" />
 		</div>';
 			

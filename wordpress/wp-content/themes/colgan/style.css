@@ -193,7 +193,7 @@ Version: 1.0
 	
 	h3 img { vertical-align:text-bottom; padding: 0 5px; }
 	
-	/* G-Forms */
+	/* Forms */
 	
 	form ul { list-style: none; }
 	[role=main] form ul li { margin: 0 0 8px 0; }
@@ -297,6 +297,27 @@ Version: 1.0
 		box-shadow: none;
 	}
 
+	.button_div {
+		margin-bottom: 40px;
+	}
+
+	.buttons {
+		display: block;
+		margin-top: 20px;
+	}
+
+	/* Audio Posts */
+	.category-name {
+		height: 75px;
+	}
+	.audio-post .author {
+	}
+
+	.audio-post .date {
+		font-style: italic;
+		margin-top: 1em;
+	}
+
 
 /* 3. Respond
 ----------------------------------------------------------------------------- */
@@ -309,6 +330,9 @@ Version: 1.0
 	[title=indexWheat] { margin: 0 0 40px; }
 	.skyscraper { display: none; }
 	[role=main] img { float: none; }
+	.category-name {
+		height: auto;
+	}
 
 }
 

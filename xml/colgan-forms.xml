@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms version="1.6.3.3.2">
+	<form labelPlacement="top_label" useCurrentUserAsAuthor="1">
+		<title><![CDATA[Audiocast Signup]]></title>
+		<confirmation type="message">
+			<message><![CDATA[Thanks for contacting us! We will get in touch with you shortly.]]></message>
+		</confirmation>
+		<button type="text">
+			<text><![CDATA[Submit]]></text>
+		</button>
+		<fields>
+			<field id="3" isRequired="1" size="medium" type="name" nameFormat="simple">
+				<label><![CDATA[Name]]></label>
+			</field>
+			<field id="2" isRequired="1" size="medium" type="email">
+				<label><![CDATA[Email]]></label>
+			</field>
+			<field id="4" isRequired="1" size="medium" type="phone" phoneFormat="standard">
+				<label><![CDATA[Phone]]></label>
+			</field>
+			<field id="5" size="medium" type="radio">
+				<label><![CDATA[Contact me by:]]></label>
+				<choices>
+					<choice isSelected="1">
+						<text><![CDATA[Email]]></text>
+					</choice>
+					<choice>
+						<text><![CDATA[Phone]]></text>
+					</choice>
+				</choices>
+			</field>
+			<field id="6" size="medium" type="radio">
+				<label><![CDATA[Do you currently hedge commodities?]]></label>
+				<choices>
+					<choice isSelected="1">
+						<text><![CDATA[Yes]]></text>
+					</choice>
+					<choice>
+						<text><![CDATA[No]]></text>
+					</choice>
+				</choices>
+			</field>
+		</fields>
+		<descriptionPlacement><![CDATA[below]]></descriptionPlacement>
+		<cssClass><![CDATA[well]]></cssClass>
+		<notification>
+			<to><![CDATA[eric.cecchi@gmail.com]]></to>
+			<subject><![CDATA[New audiocast signup]]></subject>
+			<message><![CDATA[{all_fields}]]></message>
+			<fromField><![CDATA[2]]></fromField>
+			<fromName><![CDATA[Audiocast Signup]]></fromName>
+			<disableAutoformat><![CDATA[1]]></disableAutoformat>
+		</notification>
+		<autoResponder>
+			<from><![CDATA[eric.cecchi@gmail.com]]></from>
+			<disableAutoformat><![CDATA[1]]></disableAutoformat>
+		</autoResponder>
+	</form>
+	<form labelPlacement="top_label" useCurrentUserAsAuthor="1">
+		<title><![CDATA[Contact Us]]></title>
+		<confirmation type="message">
+			<message><![CDATA[Thanks for contacting us! We will get in touch with you shortly.]]></message>
+		</confirmation>
+		<button type="text">
+			<text><![CDATA[Submit]]></text>
+		</button>
+		<fields>
+			<field id="3" isRequired="1" size="medium" type="name" nameFormat="simple">
+				<label><![CDATA[Name]]></label>
+			</field>
+			<field id="2" isRequired="1" size="medium" type="email">
+				<label><![CDATA[Email]]></label>
+			</field>
+			<field id="4" isRequired="1" size="medium" type="phone" phoneFormat="standard">
+				<label><![CDATA[Phone]]></label>
+			</field>
+			<field id="5" size="medium" type="radio">
+				<label><![CDATA[Contact me by:]]></label>
+				<choices>
+					<choice isSelected="1">
+						<text><![CDATA[Email]]></text>
+					</choice>
+					<choice>
+						<text><![CDATA[Phone]]></text>
+					</choice>
+				</choices>
+			</field>
+			<field id="6" size="medium" type="checkbox">
+				<label><![CDATA[Reason for contact:]]></label>
+				<choices>
+					<choice>
+						<text><![CDATA[Need account opening forms]]></text>
+					</choice>
+					<choice>
+						<text><![CDATA[Questions about opening an account]]></text>
+					</choice>
+					<choice>
+						<text><![CDATA[Service inquiries]]></text>
+					</choice>
+					<choice>
+						<text><![CDATA[Other]]></text>
+					</choice>
+				</choices>
+			</field>
+			<field id="7" type="text" size="medium">
+				<label><![CDATA[Subject]]></label>
+			</field>
+			<field id="8" type="textarea" size="medium">
+				<label><![CDATA[Message]]></label>
+			</field>
+		</fields>
+		<descriptionPlacement><![CDATA[below]]></descriptionPlacement>
+		<cssClass><![CDATA[well]]></cssClass>
+		<notification>
+			<to><![CDATA[eric.cecchi@gmail.com]]></to>
+			<subject><![CDATA[{Subject:7}]]></subject>
+			<message><![CDATA[{all_fields}]]></message>
+			<fromField><![CDATA[2]]></fromField>
+			<fromName><![CDATA[Contact Us]]></fromName>
+			<disableAutoformat><![CDATA[1]]></disableAutoformat>
+		</notification>
+		<autoResponder>
+			<from><![CDATA[eric.cecchi@gmail.com]]></from>
+			<disableAutoformat><![CDATA[1]]></disableAutoformat>
+		</autoResponder>
+	</form>
+</forms>

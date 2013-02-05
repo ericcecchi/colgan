@@ -42,3 +42,18 @@ function slug_body_class($classes) {
 	if (isset($post)) $classes[] = $post->post_name;
 	return $classes;
 } add_filter('body_class', 'slug_body_class');
+
+function colgan_logout_redirect($logouturl, $redir)
+	{
+		return $logouturl . '&amp;redirect_to=http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	}
+add_filter('logout_url', 'colgan_logout_redirect', 10, 2);
+
+// show admin bar only for admins
+if (!current_user_can('manage_options')) {
+	add_filter('show_admin_bar', '__return_false');
+}
+// show admin bar only for admins and editors
+if (!current_user_can('edit_posts')) {
+	add_filter('show_admin_bar', '__return_false');
+}

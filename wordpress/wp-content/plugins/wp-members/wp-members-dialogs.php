@@ -333,6 +333,8 @@ function wpmem_inc_registration_NEW( $toggle = 'new', $heading = '' )
 		wp_nonce_field( 'wpmem-register' ) . '
 		<fieldset>
 			<legend>' . $heading . '</legend>';
+	
+	$form = $form . '<span class="help-block"><font class="req">*</font>' . __( 'Required field', 'wp-members' ) . '</span>';
 
 	if( $toggle == 'edit' ) {
 
@@ -343,7 +345,7 @@ function wpmem_inc_registration_NEW( $toggle = 'new', $heading = '' )
 
 	} else {
 
-		$form = $form . '<label for="username" class="text">' . __( 'Choose a Username', 'wp-members' ) . '<font class="req">*</font></label>
+		$form = $form . '<label for="username" class="text">' . __( 'Username', 'wp-members' ) . '<font class="req">*</font></label>
 			<div class="div_text">
 				<input name="log" type="text" value="' . stripslashes( $username ) . '" class="username" id="username" />
 			</div>';
@@ -480,16 +482,15 @@ function wpmem_inc_registration_NEW( $toggle = 'new', $heading = '' )
 	} else {
 		$form = $form . '<input name="a" type="hidden" value="register" />';
 	}
-
+	
+	$form = $form . '<span class="help-block">After clicking submit, a password will be emailed to the address you provided.</span>';
 	$form = $form . '<input name="redirect_to" type="hidden" value="' . get_permalink() . '" />
 		<div class="button_div">
 			<input name="submit" type="submit" value="' . __( 'Submit', 'wp-members' ) . '" class="buttons" />
 		</div>';
 			
 	// @todo find a better place to put this
-	$form = $form . '<font class="req">*</font>' . __( 'Required field', 'wp-members' ) . '			
-
-	</fieldset></form>';
+	$form = $form . '</fieldset></form>';
 	$form = $form . wpmem_inc_attribution();
 	$form = $form . '</div>[/wpmem_txt]';
 	
@@ -567,17 +568,17 @@ function wpmem_login_form_NEW( $page, $arr )
 	$form = $form . '</div>
 
 			<div class="clear"></div>
-			<div align="right">';
+			<p>';
 				
 	if ( ( WPMEM_MSURL != null || $page == 'members' ) && $arr[7] == 'login' ) { 
 		
 		$link = apply_filters( 'wpmem_forgot_link', wpmem_chk_qstr( WPMEM_MSURL ) . 'a=pwdreset' );	
-		$form = $form . __('Forgot password?', 'wp-members') . '&nbsp;<a href="' . $link . '">' . __('Click here to reset', 'wp-members') . '</a>';
+		$form = $form . __('Forgot password?', 'wp-members') . '&nbsp;<a href="' . $link . '">' . __('Click here to reset.', 'wp-members') . '</a>';
 
 	}
 	
-	$form = $form . '</div>
-			<div align="right">';
+	$form = $form . '</p>
+			<p>';
  			
 	if ( ( WPMEM_REGURL != null ) && $arr[7] == 'login' ) { 
 
@@ -586,7 +587,7 @@ function wpmem_login_form_NEW( $page, $arr )
 
 	}			
 	
-	$form = $form. '</div>	
+	$form = $form. '</p>	
 			<div class="clear"></div>
 		</fieldset></form>
 	</div>[/wpmem_txt]';

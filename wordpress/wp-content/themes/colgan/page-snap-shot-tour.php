@@ -9,6 +9,22 @@ get_header(); ?>
 		<h1><?php the_title(); ?></h1>
 
 		<p>The <strong>Colgan Audiocast Cornbelt Snapshot Tour</strong> is broadcast 5 days a week from April through October. Jay Calhoun interviews 10 grain professionals distributed across the entire corn belt on key market drivers including crop progress and conditions, cash markets, and farmer marketing.</p>
+		
+		<p><a href="#disclaimerModal" data-toggle="modal">Read the disclaimer.</a></p>
+		
+		<!-- Disclaimer Modal -->
+		<div id="disclaimerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="disclaimerModalLabel">Disclamier</h3>
+		  </div>
+		  <div class="modal-body">
+		    <p>These comments are those of the contributor and not necessarily of Colgan Commodities LLC. Trading futures involves risk and is not suitable for everyone. You could lose more than your initial investment. Please call us and discuss any trade recommendations prior to taking action.</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal" aria-hidden="true">OK</button>
+		  </div>
+		</div>
 
 		<img src="<?php bloginfo('template_url'); ?>/images/Midwest-Contributors.png">
 
@@ -48,7 +64,7 @@ get_header(); ?>
 				<section class="audio-post">
 					<h2><?php the_date(); ?></h2>
 					<p class="post-content">
-						<?php echo do_shortcode("[audio src=\"{$url}\" volume=\"false\" width=\"240\"]"); ?>
+						<?php echo do_shortcode("[mejsaudio src=\"{$url}\" volume=\"false\" width=\"240\"]"); ?>
 						<a href="<?php echo $url; ?>">Download MP3</a>
 					</p>
 				</section>
@@ -64,8 +80,8 @@ get_header(); ?>
 		<h2>Sample</h2>
 		<p>The following is a sample of the Colgan Audiocast Cornbelt Snapshot Tour.</p>
 		<p>
-			<?php echo do_shortcode("[audio src=\"/wordpress/wp-content/uploads/2012-03-30-Morning-Sample.mp3\" width=\"200\" volume=\"false\"]"); ?>
-			<a href="<?php echo $url; ?>">Download MP3</a>
+			<?php echo do_shortcode("[mejsaudio src=\"/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3\" width=\"200\" volume=\"false\"]"); ?>
+			<a href="/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3">Download MP3</a>
 		</p>
 		<?php } // if not logged in ?>
 		<?php the_post(); the_content(); ?>

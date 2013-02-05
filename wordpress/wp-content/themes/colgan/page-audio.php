@@ -48,6 +48,21 @@ get_header(); ?>
 			pagination($loop->max_num_pages,2); 
 		} ?>
 		</div>
+		
+		<!-- Disclaimer Modal -->
+		<div id="disclaimerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="disclaimerModalLabel">Disclamier</h3>
+			</div>
+			<div class="modal-body">
+				<p>These comments are those of the contributor and not necessarily of Colgan Commodities LLC. Trading futures involves risk and is not suitable for everyone. You could lose more than your initial investment. Please call us and discuss any trade recommendations prior to taking action.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">OK</button>
+			</div>
+		</div>
+		
 	</article>
 	
 	<?php get_sidebar(); ?>

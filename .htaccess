@@ -1,5 +1,3 @@
-Redirect /admin /wordpress/wp-admin
-
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

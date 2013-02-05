@@ -30,21 +30,39 @@
 		</header>
 		<nav role="navigation" class="navbar">
 			<div class="navbar-inner container">
+				<?php if ( is_user_logged_in() ) { 
+					global $user_login;
+					get_currentuserinfo();
+				?>
+					<p class="navbar-text pull-right">Logged in as <a href="/profile/"><?php echo $user_login; ?></a>. <a href="/wordpress/wp-login.php?action=logout">Log out.</a></p>
+				<?php } ?>
 				<ul class="nav">
 					<li><a href="<?php bloginfo('url') ?>">Home</a></li>
-					<li><a href="/about/">About</a></li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Commodities Trading<b class="caret"></b></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">About<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="/commodities-trading/">About Commodities Trading</a></li>
-							<li><a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a></li>
+							<li><a href="/about/">Colgan Commodities</a></li>
+							<li><a href="/commodities-trading/">Commodities Trading</a></li>
 						</ul>
 					</li>
-					<li><a href="/commentaries/">Audio Commentaries</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Audio Commentaries<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/commentaries/">Listen Online</a></li>
+							<li><a href="/commentaries/snapshot-tour">Snapshot Tour</a></li>
+							<li><a href="/commentaries/colgan-audio-cast/">Colgan AudioCast</a></li>
+						</ul>
+					</li>
 					<li><a href="/open-account/">Open Account</a></li>
 					<li><a href="/contact-us/">Contact Us</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Log in<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">To ADM</a></li>
+							<?php if ( !is_user_logged_in() ) { ?><li><a href="/login">To ColganCommodities.com</a></li><?php } ?>
+						</ul>
+					</li>
 				</ul>
-				<ul class="nav pull-right"><li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">Login</a></li></ul>
 			</div>
 		</nav>
 		<div id="content" class="container-fluid">

@@ -70,6 +70,13 @@ function wpmem_a_build_options( $wpmem_settings )
 							  </tr>
 							  <?php } ?>
 							  <?php } ?>
+							<?php $attribution = get_option( 'wpmembers_attrib' ); ?>
+							  <tr valign="top">
+								<th align="left" scope="row"><?php _e( 'Attribution', 'wp-members' ); ?></th>
+								<td><input name="attribution" type="checkbox" id="attribution" value="1" <?php if( $attribution == 1 ) { echo "checked"; }?> />&nbsp;&nbsp;
+									<span class="description"><?php _e( 'Attribution is appreciated!  Display "powered by" link on register form?', 'wp-members' ); ?></span>
+								</td>
+							  </tr>
 							  <?php $wpmem_msurl = get_option( 'wpmembers_msurl' );
 							  if( ! $wpmem_msurl ) { $wpmem_msurl = "http://"; } ?>
 							  <tr>
@@ -186,21 +193,16 @@ function wpmem_update_options()
 		}			
 	}
 	
-	/*$wpmem_settings_msurl = $_POST['wpmem_settings_msurl'];
-	if( $wpmem_settings_msurl != 'http://' ) {
-		update_option( 'wpmembers_msurl', trim( $wpmem_settings_msurl ) );
-	}*/
+	$wpmem_attribution = ( isset( $_POST['attribution'] ) ) ? 1 : 0;
+	update_option( 'wpmembers_attrib', $wpmem_attribution );
+
 	$wpmem_settings_msurl  = $_POST['wpmem_settings_msurl'];
 	$wpmem_settings_mspage = $_POST['wpmem_settings_mspage'];
 	if( $wpmem_settings_mspage ) { update_option( 'wpmembers_msurl', $wpmem_settings_mspage ); }
 	if( $wpmem_settings_msurl != 'http://' && ! $wpmem_settings_mspage ) {
 		update_option( 'wpmembers_msurl', trim( $wpmem_settings_msurl ) );
 	}
-	
-	/* $wpmem_settings_regurl = $_POST['wpmem_settings_regurl'];
-	if( $wpmem_settings_regurl != 'http://' ) {
-		update_option( 'wpmembers_regurl', trim( $wpmem_settings_regurl ) );
-	} */
+
 	$wpmem_settings_regurl  = $_POST['wpmem_settings_regurl'];
 	$wpmem_settings_regpage = $_POST['wpmem_settings_regpage'];
 	if( $wpmem_settings_regpage ) { update_option( 'wpmembers_regurl', $wpmem_settings_regpage ); }

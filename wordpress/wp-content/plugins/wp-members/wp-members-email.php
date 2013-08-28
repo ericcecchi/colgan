@@ -40,10 +40,8 @@ function wpmem_inc_regemail( $user_id, $password, $toggle )
 	$user_email = stripslashes( $user->user_email );
 	$blogname   = wp_specialchars_decode( get_option ( 'blogname' ), ENT_QUOTES );
 	
-	if( WPMEM_USE_EXP == 1 ) {
-		$exp_type = get_user_meta( $user_id, 'exp_type', 'true' );
-		$exp_date = get_user_meta( $user_id, 'expires', 'true' );
-	}
+	$exp_type = ( WPMEM_USE_EXP == 1 ) ? get_user_meta( $user_id, 'exp_type', 'true' ) : '';
+	$exp_date = ( WPMEM_USE_EXP == 1 ) ? get_user_meta( $user_id, 'expires', 'true' )  : '';
 	
 	$wpmem_msurl = get_option( 'wpmembers_msurl', null );
 	$reg_link    = esc_url( get_user_meta( $user_id, 'wpmem_reg_url', true ) );
@@ -172,8 +170,6 @@ function wpmem_notify_admin( $user_id, $wpmem_fields )
 	
 	$arr  = get_option( 'wpmembers_email_notify' );
 	
-	$arr['body'] = apply_filters( 'wpmem_email_notify', $arr['body'] );
-	
 	$subj = str_replace( $shortcd, $replace, $arr['subj'] );
 	$body = str_replace( $shortcd, $replace, $arr['body'] );
 	
@@ -181,6 +177,9 @@ function wpmem_notify_admin( $user_id, $wpmem_fields )
 	$foot = str_replace( $shortcd, $replace, $foot );
 	
 	$body.= $foot;
+	
+	/* Apply filters for the email body */
+	$body = apply_filters( 'wpmem_email_notify', $body );
 	
 	/* Apply filters (if set) for the sending email address */
 	add_filter( 'wp_mail_from', 'wpmem_mail_from' );

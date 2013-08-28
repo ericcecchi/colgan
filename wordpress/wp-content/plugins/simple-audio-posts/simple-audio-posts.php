@@ -31,7 +31,7 @@ function create_post_type() {
 		'show_ui' => true,
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'rewrite' => array("slug" => "audio"), // Permalinks format
+		'rewrite' => "/audio/", // Permalinks format
 		'query_var' => false,
 		'supports' => array('title','author','cats'/*,'editor'*/),
     'taxonomies' => array('category')
@@ -78,11 +78,11 @@ function audio_post_column( $column, $post_id ) {
 add_action( 'add_meta_boxes', 'audio_post_add_custom_box' );
 
 function audio_post_add_custom_box() {
-    add_meta_box( 
+    add_meta_box(
         'ap_file_meta',
         __( 'MP3 File', 'ap_file' ),
         'audio_post_inner_custom_box',
-        'audio_post' 
+        'audio_post'
     );
 }
 
@@ -127,15 +127,15 @@ function audio_post_save_postdata( $post_id ) {
 
 	if ( !empty($_FILES['ap_file']['name'] ) ) {
     $file   = $_FILES['ap_file'];
-		
+
 		/* Hijack the Wordpress file uploader */
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
-		$override['action'] = 'editpost';		
+		$override['action'] = 'editpost';
 		$uploaded_file = wp_handle_upload($file, $override);
-		
+
 		$wp_filetype = wp_check_filetype($file['name'], null );
 		$attachment = array(
-					     'guid' => $uploaded_file['url'], 
+					     'guid' => $uploaded_file['url'],
 							 'post_mime_type' => $wp_filetype['type'],
 							 'post_title' => $file['name'],
 							 'post_content' => '',

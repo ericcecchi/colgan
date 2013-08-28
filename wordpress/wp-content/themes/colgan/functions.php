@@ -1,17 +1,80 @@
 <?php
+/**
+ * colgan functions and definitions
+ *
+ * @package colgan
+ */
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 640; /* pixels */
+
+if ( ! function_exists( 'colgan_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ */
+function colgan_setup() {
+
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on colgan, use a find and replace
+	 * to change 'colgan' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( 'colgan', get_template_directory() . '/languages' );
+
+	/**
+	 * Add default posts and comments RSS feed links to head
+	 */
+	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	 * Enable support for Post Thumbnails on posts and pages
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	//add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus( array(
+		'nav' => __('Navigation')
+	));
+
+	/**
+	 * Enable support for Post Formats
+	 */
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+
+	/**
+	 * Setup the WordPress core custom background feature.
+	 */
+	add_theme_support( 'custom-background', apply_filters( 'colgan_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
+
+	/**
+	 * Post thumbnails support.
+	 */
+	add_theme_support( 'post-thumbnails' );
+}
+endif; // colgan_setup
+add_action( 'after_setup_theme', 'colgan_setup' );
+
 
 add_action( 'wp_print_styles', 'my_styles' );
 
 function my_styles() {
   wp_deregister_style( 'wp-members' );
 }
-
-// Enable custom menus.
-function enable_menus() {
-	register_nav_menus( array(
-		'nav' => __('Navigation')
-	));
-} add_action('init', 'enable_menus');
 
 function custom_menus($args = '') {
 	$args['container'] = '';
@@ -34,7 +97,7 @@ function load_scripts() {
 		wp_enqueue_script('analytics');
 */
 	}
-} add_action('init', 'load_scripts');
+} add_action('wp_enqueue_scripts', 'load_scripts');
 
 // Add slug to body class.
 function slug_body_class($classes) {

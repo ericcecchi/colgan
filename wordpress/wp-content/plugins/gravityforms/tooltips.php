@@ -14,24 +14,19 @@ function print_tooltip_scripts(){
 
 function gform_tooltip($name, $css_class="", $return=false){
     $gf_tooltips = array(
-        "notification_send_to_email" => "<h6>" . __("Send To Email Address", "gravityforms") . "</h6>" . __("Enter the email address you would like the administrator notification email sent to.", "gravityforms"),
+        "notification_send_to_email" => "<h6>" . __("Send To Email Address", "gravityforms") . "</h6>" . __("Enter the email address you would like the notification email sent to.", "gravityforms"),
         "notification_autoformat" => "<h6>" . __("Disable Auto-Formatting", "gravityforms") . "</h6>" . __("When enabled, auto-formatting will insert paragraph breaks automatically. Disable auto-formatting when using HTML to create email notification content.", "gravityforms"),
         "notification_send_to_routing" => "<h6>" . __("Routing", "gravityforms") . "</h6>" . __("Allows notification to be sent to different email addresses depending on values selected in the form.", "gravityforms"),
-        "notification_from_email" => "<h6>" . __("From Email Address", "gravityforms") . "</h6>" . __("Enter the email address you would like the administrator notification email sent from, or select the email from available email form fields.", "gravityforms"),
-        "notification_from_name" => "<h6>" . __("From Name", "gravityforms") . "</h6>" . __("Enter the name you would like the administrator notification email sent from, or select the name from available name fields.", "gravityforms"),
-        "notification_reply_to" => "<h6>" . __("Reply To", "gravityforms") . "</h6>" . __("Enter the email address you would like to be used as the reply to address for the administrator notification email.", "gravityforms"),
-        "notification_bcc" => "<h6>" . __("Blind Carbon Copy Addresses", "gravityforms") . "</h6>" . __("Enter a comma separated list of email addresses you would like to receive a BCC of the administrator notification email.", "gravityforms"),
-        "autoresponder_send_to_email" => "<h6>" . __("Blind Carbon Copy Addresses", "gravityforms") . "</h6>" . __("Select the email form field that the user notification email should be sent to.", "gravityforms"),
-        "autoresponder_bcc" => "<h6>" . __("Blind Carbon Copy Addresses", "gravityforms") . "</h6>" . __("Enter a comma separated list of email addresses you would like to receive a BCC of the user notification email.", "gravityforms"),
-        "autoresponder_from" => "<h6>" . __("From Email Address", "gravityforms") . "</h6>" . __("Enter the email address you would like the user notification email sent from.", "gravityforms"),
-        "autoresponder_from_name" => "<h6>" . __("From Name", "gravityforms") . "</h6>" . __("Enter the name you would like the user notification email sent from.", "gravityforms"),
-        "autoresponder_reply_to" => "<h6>" . __("Reply To Address", "gravityforms") . "</h6>" . __("Enter the email address you would like to be used as the reply to address for the user notification email.", "gravityforms"),
+        "notification_from_email" => "<h6>" . __("From Email Address", "gravityforms") . "</h6>" . __("Enter the email address you would like the notification email sent from, or select the email from available email form fields.", "gravityforms"),
+        "notification_from_name" => "<h6>" . __("From Name", "gravityforms") . "</h6>" . __("Enter the name you would like the notification email sent from, or select the name from available name fields.", "gravityforms"),
+        "notification_reply_to" => "<h6>" . __("Reply To", "gravityforms") . "</h6>" . __("Enter the email address you would like to be used as the reply to address for the notification email.", "gravityforms"),
+        "notification_bcc" => "<h6>" . __("Blind Carbon Copy Addresses", "gravityforms") . "</h6>" . __("Enter a comma separated list of email addresses you would like to receive a BCC of the notification email.", "gravityforms"),
         "form_activity" => "<h6>" . __("Limit Form Activity", "gravityforms") . "</h6>" . __("Limit the number of entries a form can generate and/or schedule a time period the form is active.", "gravityforms"),
         "form_limit_entries" => "<h6>" . __("Limit Number of Entries", "gravityforms") . "</h6>" . __("Enter a number in the input box below to limit the number of entries allowed for this form. The form will become inactive when that number is reached.", "gravityforms"),
         "form_schedule_form" => "<h6>" . __("Schedule Form", "gravityforms") . "</h6>" . __("Schedule a time period the form is active.", "gravityforms"),
         "form_honeypot" => "<h6>" . __("Enable Anti-spam honeypot", "gravityforms") . "</h6>" . __("Enables the honeypot spam protection technique, which is an alternative to the reCAPTCHA field.", "gravityforms"),
         "form_animation" => "<h6>" . __("Enable Animation", "gravityforms") . "</h6>" . __("Check this option to enable a sliding animation when displaying/hiding conditional logic fields.", "gravityforms"),
-        "form_tile" => "<h6>" . __("Form Title", "gravityforms") . "</h6>" . __("Enter the title of your form.", "gravityforms"),
+        "form_title" => "<h6>" . __("Form Title", "gravityforms") . "</h6>" . __("Enter the title of your form.", "gravityforms"),
         "form_description" => "<h6>" . __("Form Description", "gravityforms") . "</h6>" . __("Enter a description for your form. This may be used for user instructions.", "gravityforms"),
         "form_label_placement" => "<h6>" . __("Form Label Placement", "gravityforms") . "</h6>" . __("Select the label placement.  Labels can be top aligned above a field, left aligned to the left of a field, or right aligned to the left of a field.", "gravityforms"),
         "form_description_placement" => "<h6>" . __("Description Placement", "gravityforms") . "</h6>" . __("Select the description placement.  Descriptions can be placed above the field inputs or below the field inputs.", "gravityforms"),
@@ -76,8 +71,11 @@ function gform_tooltip($name, $css_class="", $return=false){
         "form_field_required" => "<h6>" . __("Required Field", "gravityforms") . "</h6>" . __("Select this option to make the form field required.  A required field will prevent the form from being submitted if it is not filled out or selected.", "gravityforms"),
         "form_field_no_duplicate" => "<h6>" . __("No Duplicates", "gravityforms") . "</h6>" . __("Select this option to limit user input to unique values only.  This will require that a value entered in a field does not currently exist in the entry database for that field.", "gravityforms"),
         "form_field_number_range" => "<h6>" . __("Number Range", "gravityforms") . "</h6>" . __("Enter the minimum and maximum values for this form field.  This will require that the value entered by the user must fall within this range.", "gravityforms"),
+        "form_field_enable_calculation" => "<h6>" . __("Enable Calculation", "gravityforms") . "</h6>" . __("Enabling caculations will allow the value of this field to be dynamically calculated based on a mathematical formula.", "gravityforms"),
+        "form_field_calculation_formula" => "<h6>" . __("Formula", "gravityforms") . "</h6>" . __("Specify a mathematical formula. The result of this formula will be dynamically populated as the value for this field.", "gravityforms"),
+        "form_field_calculation_rounding" => "<h6>" . __("Rounding", "gravityforms") . "</h6>" . __("Specify how many decimal places the number should be rounded to.", "gravityforms"),
         "form_field_admin_label" => "<h6>" . __("Admin Label", "gravityforms") . "</h6>" . __("Enter the admin label of the form field.  Entering a value in this field will override the Field Label when displayed in the Gravity Forms administration tool.", "gravityforms"),
-        "form_field_size" => "<h6>" . __("Field Size", "gravityforms") . "</h6>" . __("Select a form field size from the available options.  This will set the width of the field.", "gravityforms"),
+        "form_field_size" => "<h6>" . __("Field Size", "gravityforms") . "</h6>" . __("Select a form field size from the available options. This will set the width of the field.", "gravityforms"),
         "form_field_default_value" => "<h6>" . __("Default Value", "gravityforms") . "</h6>" . __("If you would like to pre-populate the value of a field, enter it here.", "gravityforms"),
         "form_field_validation_message" => "<h6>" . __("Validation Message", "gravityforms") . "</h6>" . __("If you would like to override the default error validation for a field, enter it here.  This message will be displayed if there is an error with this field when the user submits the form.", "gravityforms"),
         "form_field_recaptcha_language" => "<h6>" . __("reCaptcha Language", "gravityforms") . "</h6>" . __("Select the language you would like to use for the reCAPTCHA display from the available options.", "gravityforms"),
@@ -152,6 +150,5 @@ function gform_tooltip($name, $css_class="", $return=false){
     else
         echo $tooltip;
 }
-
 
 ?>

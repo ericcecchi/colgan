@@ -2,8 +2,8 @@
 Contributors: cbutlerjr
 Tags: authentication, captcha, community, content, login, password, register, registration, restriction, security, user, users, membership, access, block, permissions, members
 Requires at least: 3.1
-Tested up to: 3.5.0
-Stable tag: 2.8.1
+Tested up to: 3.5.2
+Stable tag: 2.8.4
 License: GPLv2
 
 WP-Members&trade; is a free membership management framework for WordPress&reg; that restricts content to registered users.
@@ -105,7 +105,7 @@ An [official statement is available here](http://butlerblog.com/regarding-wp-mem
 
 == Upgrade Notice ==
 
-Security fix release - This update is comprised of security fixes and a couple of bug patches.
+WP-Members 2.8.3 is a new feature release with fixes and code improvements for some previous issues.  See release notes for specific information.  Always test first!
 
 == Screenshots ==
 
@@ -113,6 +113,62 @@ Rather than bloat your plugin download with screenshots, we will be offering scr
 
 
 == Changelog ==
+
+= 2.8.4 =
+
+* Fixed a small bug on admin-side user profile that caused checkboxes to not update correctly
+* Added optional small "powered by" attribution link at the bottom of the registration form.
+
+= 2.8.3 =
+
+Feature Updates
+
+* Allows native fields display_name, nicename, and nickname to be removed from the field manager.
+* New filter wpmem_logout_link filters all logout links.
+* Added default registration via wp-login page (backend).  This of course can be disabled by unchecking "anyone can register" in the WP settings.
+* Completion of user admin panel implementation.  Added screens for non-active and non-exported users.
+* Added a custom column to page/post tables to indicate if a post/page is blocked/unblocked opposite the chosen default setting.
+
+Fixes
+
+* Fixed bug in admin/post.php that caused an error due a typo in the selected capability.
+* Applied the patch for the users table custom columns that didn't return non-WP-Members custom column values.
+* Fixed the use of the nonce constant to check if the constant is defined.
+* Applied patch to the utilities file that left some debugging code artifacts in the 2.8.2 release.
+
+Improvements
+
+* Updated dashboard widget to either superadmin or not display for multisite.
+* Added a div tag to the "Required Field" text in the registration form - NOTE: if you run any filters on the registration form, you may need to test them and update accordingly.
+* Updated the included stylesheets for the addition of req-text class for the "Required Field" text in the registration form.
+* Added Portugese translation files (Thanks Joana!)
+
+= 2.8.2 =
+
+Feature Updates
+
+* Added WP user fields user_nicename, display_name, and nickname to the $fields array, defaults to $username for backward compatibility.
+* Updated field manager process to allow user_nicename, display_name, and nickname to be added via the fields manager as WP native fields
+* Added wpmem_register_data filter for $fields to allow filtering of all fields prior to new user insertion, including above new fields (added updates to registration function to make better use of the filter).
+* Added wpmem_pre_validate_form for $fields to allow filtering fields prior to default form field validation.
+* Begin implementation of moving bulk user management features into Users > All Users.  Users > All Users screen can now activate and export users, and will show additional fields as selected in the fields manager. 
+* Added wpmem_admin_profile_heading, wpmem_admin_profile_field, and wpmem_admin_profile_update filters. These filters are all part of the user profile section.
+
+Fixes, Patches, & Code Improvements
+
+* Fixed the conversion of update-profile to members-area shortcode.  The bug renders all page shortcodes as members-area.
+* Fixed the activate user process for user defined passwords, a bug from 2.8.0/2.8.1.
+* Fixed a bug that can cause the sidebar login widget to not post to the correct url when a static front page is used.
+* Fixed user profile update (updates with custom checkbox don't stay checked), an issue from 2.8.0.
+* Patch correcting the front-side registration form nonce.  This patch should improve reliability while still using nonces for security.
+* Patch for the dropdown field for users running < PHP 5.3.
+* Made front-side nonce optional, defaults to off.
+* Moved utility functions out of core.php to utility file utilities.php.
+* Moved the location of the wpmem_email_notify hook so the filter comes after shortcodes are parsed.
+* Updated the registration function to rely on the values contain in $fields, allowing for the array values to be filtered.
+* Updated the registration form to accommodate registration function updates.
+* Improved auto excerpt function screens for unclosed common html tags and provides a closing tag if none exists.
+* Improved export process to wrap fields with double quotes - fixes issues if field contains a comma.
 
 = 2.8.1 =
 

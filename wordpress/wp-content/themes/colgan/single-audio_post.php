@@ -3,13 +3,13 @@
 	<article class="span8" role="main">
 <article>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<section>	
+	<section>
 		<?php the_title(); ?>
-		
+
 		<?php endwhile; else : ?>
 		<h2>Uh-oh.</h2>
 		<p>It worked 'til you broke it!</p>
-		
+
 		<?php endif; ?>
 	</section>
 	</article>

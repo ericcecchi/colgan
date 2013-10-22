@@ -33,7 +33,7 @@ get_header(); ?>
 
 		<img src="<?php bloginfo('template_url'); ?>/images/Midwest-Contributors.png">
 
-		<?php /* if ( is_user_logged_in() ) { */ ?>
+		<?php  if ( is_user_logged_in() ) { ?>
 		<h2 id="snapshot-tour-locations-in-order-of-appearance">Snapshot Tour Locations in Order of Appearance</h2>
 		<ol>
 			<li>Maumee, Ohio</li>
@@ -80,16 +80,14 @@ get_header(); ?>
 		<?php if (function_exists("pagination")) {
 			pagination($loop->max_num_pages,2);
 		} ?>
-		<?php /* } // if logged in */ ?>
+		<?php } // if logged in ?>
 		<?php if (!is_user_logged_in()) { ?>
-<!--
 		<h2>Sample</h2>
 		<p>The following is a sample of the Colgan Audiocast Cornbelt Snapshot Tour.</p>
 		<p>
-			<?php /* echo do_shortcode("[mejsaudio src=\"/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3\" width=\"200\" volume=\"false\"]");  */?>
+			<?php echo do_shortcode("[mejsaudio src=\"/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3\" width=\"200\" volume=\"false\"]"); ?>
 			<a href="/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3">Download MP3</a>
 		</p>
--->
 		<?php } // if not logged in ?>
 		<?php the_post(); the_content(); ?>
 	</article>

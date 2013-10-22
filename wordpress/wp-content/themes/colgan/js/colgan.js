@@ -8,6 +8,15 @@ $(document).ready(function() {
     cap = $(this).children(".caption").first();
     $("#photoModal .modal-footer").html(cap.html());
     $("#photoModal .modal-header .modal-title").html(title);
+  });
 
+  $('audio').mediaelementplayer({
+    features: ['playpause','current','progress','duration'],
+    audioWidth: 250,
+     success: function(media, domObject) {
+         media.addEventListener('play', function(e) {
+            _gaq.push(['_trackEvent', 'Commentary plays', 'Play', $(this).data('category')]);
+          }, true);
+      }
   });
 });

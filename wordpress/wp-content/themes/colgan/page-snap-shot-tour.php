@@ -66,13 +66,13 @@ get_header(); ?>
 				if ( get_post_meta($post->ID, 'ap_url', true) ) :
 					$url = get_post_meta($post->ID, "ap_url", true);
 				?>
-				<section class="audio-post">
+				<div class="audio-post">
 					<h3><?php the_date(); ?></h3>
 					<p class="post-content">
-						<?php echo do_shortcode("[mejsaudio src=\"{$url}\" volume=\"false\" width=\"240\"]"); ?>
+						<audio id="<?php echo $post->ID; ?>" src="<?php echo $url; ?>" type="audio/mp3" controls="controls" preload="none" data-category="Snapshot Tour"></audio>
 						<a href="<?php echo $url; ?>">Download MP3</a>
 					</p>
-				</section>
+				</div>
 				<?php endif; ?>
 				<?php endwhile; //each post ?>
 				</tbody>
@@ -85,7 +85,7 @@ get_header(); ?>
 		<h2>Sample</h2>
 		<p>The following is a sample of the Colgan Audiocast Cornbelt Snapshot Tour.</p>
 		<p>
-			<?php echo do_shortcode("[mejsaudio src=\"/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3\" width=\"200\" volume=\"false\"]"); ?>
+			<?php echo do_shortcode("[audio src=\"/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3\" width=\"200\" volume=\"false\"]"); ?>
 			<a href="/wordpress/wp-content/uploads/2012/10/snapshot101612.mp3">Download MP3</a>
 		</p>
 		<?php } // if not logged in ?>

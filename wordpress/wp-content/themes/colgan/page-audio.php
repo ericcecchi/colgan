@@ -42,7 +42,7 @@ get_header(); ?>
 				?>
 				<section class="audio-post">
 					<h3><?php echo get_the_date(); ?></h3>
-					<?php echo do_shortcode("[audio src=\"{$url}\" volume=\"false\" width=\"200\"]"); ?>
+					<audio id="<?php echo $post->ID; ?>" src="<?php echo $url; ?>" type="audio/mp3" controls="controls" preload="none" data-category="<?php echo $category->name; ?>"></audio>
 					<a href="<?php echo $url; ?>">Download MP3</a>
 				</section>
 				<?php endif; ?>

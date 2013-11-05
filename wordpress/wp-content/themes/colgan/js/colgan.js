@@ -11,6 +11,8 @@ $(document).ready(function() {
   });
 
   $('audio').mediaelementplayer({
+    plugins: ['flash','silverlight'],
+    enableAutosize: true,
     features: ['playpause','current','progress','duration'],
     audioWidth: 250,
      success: function(media, domObject) {

@@ -120,3 +120,15 @@ if (!current_user_can('manage_options')) {
 if (!current_user_can('edit_posts')) {
 	add_filter('show_admin_bar', '__return_false');
 }
+
+function colgan_logout_url($redirect = '') {
+  $args = array( 'action' => 'logout' );
+  if ( !empty($redirect) ) {
+          $args['redirect_to'] = urlencode( $redirect );
+  }
+
+  $logout_url = add_query_arg($args, site_url('wp-login.php', 'login'));
+  $logout_url = wp_nonce_url( $logout_url, 'log-out' );
+
+  return $logout_url;
+}

@@ -12,9 +12,9 @@
  * @copyright 2013 Eric Cecchi
  *
  * @wordpress-plugin
- * Plugin Name: Redemption Photos
- * Plugin URI:  http://redemptionbiblechurch.org
- * Description: Photos @RedemptionBC
+ * Plugin Name: Colgan Photos
+ * Plugin URI:  http://colgancommodities.com
+ * Description: Photos @Colgan
  * Version:     1.0.0
  * Author:      Eric Cecchi
  * Author URI:  http://ericcecchi.com

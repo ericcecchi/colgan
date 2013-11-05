@@ -1,6 +1,6 @@
 <?php
 /**
- * Redemption Photos.
+ * Colgan Photos.
  *
  * @package   Photo_Posts
  * @author    Eric Cecchi <me@ericcecchi.com>
@@ -10,7 +10,7 @@
  */
 
 /**
- * Class Redemption Photos.
+ * Class Colgan Photos.
  *
  *
  * @package Photo_Posts

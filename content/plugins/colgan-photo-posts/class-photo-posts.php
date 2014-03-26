@@ -25,7 +25,7 @@ class Photo_Posts {
 	 *
 	 * @var     string
 	 */
-	protected $version = '1.0.0';
+	protected $version = '1.1.0';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -259,7 +259,7 @@ class Photo_Posts {
 				'labels' => $labels,
 				'hierarchical' => false,
 				'description' => 'Photos @ColganCommodities',
-				'supports' => array( 'title', 'editor', 'thumbnail', ),
+				'supports' => array( 'title', 'thumbnail', ),
 
 				'public' => true,
 				'show_ui' => true,

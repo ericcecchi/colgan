@@ -9,3 +9,5 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+RedirectMatch 301 /wordpress/wp-content(.*) /content$1

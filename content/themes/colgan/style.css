@@ -163,14 +163,6 @@ Version: 1.0
 		}
 	}
 
-	.dropdown:hover > ul.dropdown-menu{
-		display: block;
-	}
-
-	.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
-		background: #070;
-	}
-
 	.glyphicon:before {
 		font-size: 1.3em;
 		vertical-align: bottom;
@@ -188,35 +180,36 @@ Version: 1.0
 	.navbar .nav > li > a:active {
 		color: rgba(255,255,255,.8);
 		text-decoration: none;
+		background-color: transparent;
 	}
 	.navbar .nav .active > a,
 	.navbar .nav .active > a:hover {
 		color: #ddd;
 		text-decoration: none;
-		background-color: #3c2415;
+		background-color: transparent;
 	}
 
 	.navbar .nav li.dropdown.open > .dropdown-toggle,
 	.navbar .nav li.dropdown.active > .dropdown-toggle,
 	.navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	  background-color: transparent;
-	  color: #ddd;
+		background-color: transparent;
+		color: #ddd;
 	}
 
 	.navbar .nav li.dropdown > .dropdown-toggle .caret {
-	  border-top-color: #ddd;
-	  border-bottom-color: #ddd;
+		border-top-color: #ddd;
+		border-bottom-color: #ddd;
 	}
 	.navbar .nav li.dropdown.open > .dropdown-toggle .caret,
 	.navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 	.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
-	  border-top-color: #ddd;
-	  border-bottom-color: #ddd;
+		border-top-color: #ddd;
+		border-bottom-color: #ddd;
 	}
 
 	.navbar .nav li.dropdown > a:hover .caret {
-	  border-top-color: #bbb;
-	  border-bottom-color: #bbb;
+		border-top-color: #bbb;
+		border-bottom-color: #bbb;
 	}
 
 	p.logged-in {
@@ -468,8 +461,17 @@ Version: 1.0
 
 /* 3. Respond
 ----------------------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+	.navbar-nav .dropdown:hover .dropdown-menu {
+			display: block;
+	 }
 
-@media (max-device-width: 768px), (max-width: 768px) {
+	.navbar-nav .open .dropdown-menu>li>a:hover, .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #070;
+	}
+}
+
+@media screen and (max-width: 767px) {
 
 	[role=banner] { background: none; }
 	[role=banner] h1 { font-size: 150%; line-height: 1; text-align: center; }
@@ -483,9 +485,21 @@ Version: 1.0
 	.navbar .nav { padding: 0 10px; }
 	article.photo-archive { height: auto; }
 
+	.navbar-nav .open .dropdown-menu>li>a:hover, .navbar-nav .open .dropdown-menu>li>a:focus {
+		background-color: transparent;
+	}
+
+	.navbar-nav .dropdown-menu>li>a {
+		color: #fff;
+	}
+
+	.navbar-nav .dropdown-menu>li>a:hover {
+		color: rgba(255,255,255,.8);
+	}
+
 }
 
-@media (max-device-width: 480px), (max-width: 480px) {
+@media screen and (max-width: 479px) {
 
 	body { font-size: 1.4em; }
 	.container { padding: 0 20px; }
@@ -497,7 +511,6 @@ Version: 1.0
 	[title=indexWheat] { margin: 0 0 20px; }
 	form.well textarea { width: 210px; }
 	[role=contentinfo] { padding-top: 20px; }
-	.navbar { margin: 0 -20px 20px; }
 	.navbar .nav > li > a {
 		padding: 10px;
 	}

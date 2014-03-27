@@ -36,14 +36,14 @@
 					<ul class="nav navbar-nav">
 						<li><a href="<?php bloginfo('url') ?>">Home</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" href="#">About</a>
+							<a class="dropdown-toggle" href="#" data-toggle="dropdown">About</a>
 							<ul class="dropdown-menu">
 								<li><a href="/about/">Colgan Commodities</a></li>
 								<li><a href="/commodities-trading/">Commodities Trading</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" href="#">Audio Commentaries</a>
+							<a class="dropdown-toggle" href="#" data-toggle="dropdown">Audio Commentaries</a>
 							<ul class="dropdown-menu">
 								<li><a href="/commentaries/">Listen Online</a></li>
 								<li><a href="/commentaries/snapshot-tour">Snapshot Tour</a></li>
@@ -54,7 +54,7 @@
 						<li><a href="/open-account/">Open Account</a></li>
 						<li><a href="/contact-us/">Contact Us</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" href="#">Log in</a>
+							<a class="dropdown-toggle" href="#" data-toggle="dropdown">Log in</a>
 							<ul class="dropdown-menu">
 								<?php if ( !is_user_logged_in() ) { ?><li><a href="/login">To ColganCommodities.com</a></li><?php } ?>
 								<li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">To ADM</a></li>

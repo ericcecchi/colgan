@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <div class="row">
-	<div class="col col-lg-4">
+	<div class="col col-sm-4 hidden-xs">
 		<img title="indexWheat" src="<?php bloginfo('template_url'); ?>/images/harvest-wheat.jpg" alt="" >
 	</div>
-	<div class="col col-lg-8">
+	<div class="col col-sm-8">
 		<h1>Use futures and options to hedge your grain!</h1>
 		<p>As a farmer, the current business environment is full of risk. Do you really know the status of your local grain elevator, ethanol plant, feed plant or feedlot? By hedging risk through <a href="/commodities-trading/">commodities trading</a>, you'll know exactly where you stand at the end of each day and lower your overall exposure.</p>
 		<a href="/commodities-trading/" class="btn btn-success btn-large">Learn More</a>

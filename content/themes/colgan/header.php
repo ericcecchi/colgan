@@ -7,7 +7,6 @@
 		<meta name="description" content="Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market their products.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css?v=51235123">
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap-glyphicons.css?v=51235123">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css?v=51235123">
 
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
@@ -33,6 +32,14 @@
 		</header>
 		<nav role="navigation" class="navbar">
 			<div class="container">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="<?php bloginfo('url') ?>">Home</a></li>
 						<li class="dropdown">
@@ -61,6 +68,8 @@
 							</ul>
 						</li>
 					</ul>
+				</div>
+
 			</div>
 		</nav>
 		<?php if ( is_user_logged_in() ) {

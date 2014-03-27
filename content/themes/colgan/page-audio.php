@@ -77,7 +77,7 @@ get_header(); ?>
 		</div><!-- /.modal -->
 	</article>
 
-	<?php get_sidebar(); ?>
+	<?php // get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

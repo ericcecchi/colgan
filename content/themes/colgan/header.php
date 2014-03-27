@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?php bloginfo('name'); ?></title>
-		<meta name="author" content="Marty Colgan">
+		<meta rel="author" content="Marty Colgan">
 		<meta name="description" content="Colgan Commodities is a futures and commodities brokerage firm specializing in providing farmers with the tools to market their products.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css?v=51235123">
@@ -64,10 +64,11 @@
 			</div>
 		</nav>
 		<?php if ( is_user_logged_in() ) {
+			global $user_identity;
 			global $user_login;
 			get_currentuserinfo();
 		?>
-		<p class="container logged-in">Logged in as <a href="/profile/"><?php echo $user_login; ?></a>. <a href="<?php echo colgan_logout_url('/'); ?>">Log out.</a></p>
+		<p class="container logged-in">Logged in as <a href="/profile/"><?php echo ($user_identity) ? $user_identity : $user_login; ?></a>. <a href="<?php echo colgan_logout_url('/'); ?>">Log out.</a></p>
 		<?php } ?>
 		<div id="content" class="container">
 

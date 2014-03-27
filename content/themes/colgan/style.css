@@ -111,7 +111,7 @@ Version: 1.0
 	[role=banner] {
 		background: url(images/Header-Background.jpg) 0 54% no-repeat;
 		background-size: cover;
-		padding: 120px 40px 40px;
+		padding: 120px 0 40px;
 	}
 	[role=banner] h1 { font-size: 200%; line-height: 76px; margin: 0; }
 	[role=banner] h1 a { height: 75px; background: url(images/CC-Logo.svg) 0 0 no-repeat; background-size: 75px; color: #3c2415; display: block; padding: 0 0 0 100px; }
@@ -434,13 +434,21 @@ Version: 1.0
 		box-shadow: none;
 	}
 
-	.button_div {
-		margin-bottom: 40px;
+	#wpmem_reg .button_div, #wpmem_login .button_div {
+		height: auto !important;
+	}
+
+	#wpmem_login .link-text, #wpmem_reg .button_div, #wpmem_login .button_div, #wpmem_reg .div_text, #wpmem_reg .div_textarea, #wpmem_reg .div_select, #wpmem_login .div_text, #wpmem_reg .div_checkbox {
+		width: 100% !important;
+	}
+
+	#wpmem_reg legend, #wpmem_login legend {
+		line-height: 1.6 !important;
+		margin-bottom: 20px !important;
 	}
 
 	.buttons {
 		display: block;
-		margin-top: 20px;
 	}
 
 	/* Audio Posts */

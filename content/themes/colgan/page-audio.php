@@ -13,6 +13,8 @@ get_header(); ?>
 			<a href="<?php echo bloginfo('url').'/wordpress/wp-admin/post-new.php?post_type=audio_post'; ?>" class="btn btn-primary">New audio post</a>
 		<?php endif; ?>
 
+		<?php if ( is_user_logged_in() ) { ?>
+
 		<?php
 			$cat_args = array(
 			'orderby' => 'slug',
@@ -52,7 +54,10 @@ get_header(); ?>
 		<?php if (function_exists("pagination")) {
 			pagination($loop->max_num_pages,2);
 		} ?>
-		</div>
+
+		<?php } // if logged in ?>
+	</article>
+</div>
 
 		<div id="disclaimerModal" class="modal fade">
 			<div class="modal-dialog">

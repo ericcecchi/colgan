@@ -6,7 +6,7 @@
 		<?php the_post(); the_content(); ?>
 	</article>
 
-	<?php get_sidebar(); ?>
+	<?php // get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

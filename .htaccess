@@ -11,3 +11,8 @@ RewriteRule . /index.php [L]
 # END WordPress
 
 RedirectMatch 301 /wordpress/wp-content(.*) /content$1
+
+order allow,deny
+deny from 146.0.
+deny from 176.123.2.7
+allow from all

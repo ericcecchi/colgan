@@ -77,7 +77,6 @@
 			global $user_login;
 			get_currentuserinfo();
 		?>
-		<p class="container logged-in">Logged in as <a href="/profile/"><?php echo ($user_identity) ? $user_identity : $user_login; ?></a>. <a href="<?php echo colgan_logout_url('/'); ?>">Log out.</a></p>
+		<p class="container logged-in">Logged in as <a href="/profile/"><?php echo ($user_identity) ? $user_identity : $user_login; ?></a>. <a href="<?php echo colgan_logout_url(); ?>">Log out.</a></p>
 		<?php } ?>
 		<div id="content" class="container">
-

@@ -108,7 +108,7 @@ function slug_body_class($classes) {
 
 function colgan_logout_redirect($logouturl, $redir)
 	{
-		return $logouturl . '&amp;redirect_to=http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		return $logouturl . '&amp;redirect_to='.urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	}
 add_filter('logout_url', 'colgan_logout_redirect', 10, 2);
 
@@ -124,7 +124,9 @@ if (!current_user_can('edit_posts')) {
 function colgan_logout_url($redirect = '') {
   $args = array( 'action' => 'logout' );
   if ( !empty($redirect) ) {
-          $args['redirect_to'] = urlencode( $redirect );
+    $args['redirect_to'] = urlencode( $redirect );
+  } else {
+    $args['redirect_to'] = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
   }
 
   $logout_url = add_query_arg($args, site_url('wp-login.php', 'login'));

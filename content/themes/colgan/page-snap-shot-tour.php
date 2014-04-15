@@ -10,6 +10,33 @@ get_header(); ?>
 	<p>The <strong>Colgan Audiocast Cornbelt Snapshot Tour</strong> is broadcast 5 days a week from April through October. Jay Calhoun interviews 10 grain professionals distributed across the entire corn belt on key market drivers including crop progress and conditions, cash markets, and farmer marketing.</p>
 
 	<p><a href="#disclaimerModal" data-toggle="modal">Read the disclaimer.</a></p>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<img src="<?php bloginfo('template_url'); ?>/images/Midwest-Contributors.png">
+		</div>
+
+		<div class="col-sm-6">
+			<h2 style="margin-top: 0;">
+				Snapshot Tour locations<br>
+				<small>In order of appearance</small>
+			</h2>
+			<ol>
+				<li>Maumee, Ohio</li>
+				<li>Trenton, Tennessee</li>
+				<li>Greenville, Ohio</li>
+				<li>Logansport,  Indiana</li>
+				<li>Champaign, Illinois</li>
+				<li>Camp Grove, Illinois</li>
+				<li>Bird Island, Minnesota</li>
+				<li>Kearney, Nebraska</li>
+				<li>Sheldon, Iowa</li>
+			</ol>
+		</div>
+	</div>
+
+	<?php  // if ( is_user_logged_in() ) { ?>
+
 	<?php if (current_user_can('publish_posts')) : ?>
 		<a href="<?php echo bloginfo('url').'/wordpress/wp-admin/post-new.php?post_type=audio_post'; ?>" class="btn btn-primary">New audio post</a>
 	<?php endif; ?>
@@ -30,20 +57,6 @@ get_header(); ?>
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
-	<img src="<?php bloginfo('template_url'); ?>/images/Midwest-Contributors.png">
-
-	<?php  // if ( is_user_logged_in() ) { ?>
-	<h2 id="snapshot-tour-locations-in-order-of-appearance">Snapshot Tour Locations in Order of Appearance</h2>
-	<ol>
-		<li>Maumee, Ohio</li>
-		<li>Henderson, Kentucky</li>
-		<li>Greenville, Ohio</li>
-		<li>Clymers,  Indiana</li>
-		<li>Champaign, Illinois</li>
-		<li>Bird Island, Minnesota</li>
-		<li>Kearney, Nebraska</li>
-		<li>Sheldon, Iowa</li>
-	</ol>
 	<?php
 		$cat_args = array(
 		'orderby' => 'slug',

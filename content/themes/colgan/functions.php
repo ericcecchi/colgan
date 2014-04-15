@@ -134,3 +134,54 @@ function colgan_logout_url($redirect = '') {
 
   return $logout_url;
 }
+
+/**
+ * Allow password reset with email only (WP-Members).
+ */
+
+add_filter( 'wpmem_login_form', 'my_resetpwd_inputs' );
+function my_resetpwd_inputs( $form ) {
+
+	// we need the action variable
+	global $wpmem_a;
+
+	// if the action is pwdreset
+	if( $wpmem_a == 'pwdreset' ) {
+		// html for the username field
+		$username_field = '<label for="user">Username</label><div class="div_text"><input name="user" type="text" id="user" value="" class="username" /></div>';
+
+		// the "search" strings (remove breaks, tabs, and the username)
+		$old = array( "\n", "\r", "\t", $username_field );
+
+		// the "replace strings (essentially, everything is empty "")
+		$new = array( '', '', '', '' );
+
+		// do the search/replace
+		$form = str_replace( $old, $new, $form );
+
+	}
+
+	// return the $form html string
+	return $form;
+}
+
+add_filter( 'wpmem_pwdreset_args', 'my_pwd_reset_args' );
+function my_pwd_reset_args( $args ) {
+
+	// get the user data object by the user's email
+	if( isset( $_POST['email'] ) ) {
+		$user = get_user_by( 'email', trim( $_POST['email'] ) );
+	} else {
+		$user = false;
+	}
+
+	// if you have a valid user, populate the reset args
+	if( $user ) {
+		return array('user'=>$user->user_login,'email'=>$_POST['email']);
+	} else {
+		return array( 'user' => '', 'email' => '' );
+	}
+
+	// return the reset arguments
+	return $args;
+}

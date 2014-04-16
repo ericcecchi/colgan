@@ -54,7 +54,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="/commentaries/">Listen Online</a></li>
 								<li><a href="/commentaries/snapshot-tour">Snapshot Tour</a></li>
-								<li><a href="/commentaries/colgan-audio-cast/">Colgan AudioCast</a></li>
+								<li><a href="/commentaries/market-updates/">Market Updates</a></li>
 							</ul>
 						</li>
 						<li><a href="/photos/">Photo Blog</a></li>

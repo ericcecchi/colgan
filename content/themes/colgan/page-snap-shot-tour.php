@@ -12,11 +12,11 @@ get_header(); ?>
 	<p><a href="#disclaimerModal" data-toggle="modal">Read the disclaimer.</a></p>
 
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm-7">
 			<img src="<?php bloginfo('template_url'); ?>/images/Midwest-Contributors.png">
 		</div>
 
-		<div class="col-sm-6">
+		<div class="col-sm-5">
 			<h2 style="margin-top: 0;">
 				Snapshot Tour locations<br>
 				<small>In order of appearance</small>
@@ -28,6 +28,7 @@ get_header(); ?>
 				<li>Logansport,  Indiana</li>
 				<li>Champaign, Illinois</li>
 				<li>Camp Grove, Illinois</li>
+				<li>Oelwein, Iowa</li>
 				<li>Bird Island, Minnesota</li>
 				<li>Kearney, Nebraska</li>
 				<li>Sheldon, Iowa</li>

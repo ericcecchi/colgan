@@ -171,6 +171,7 @@ Version: 1.0
 
 	.navbar .nav > li > a {
 		float: none;
+		font-size: .95em;
 		padding: 20px 10px;
 		color: #ffffff;
 		text-decoration: none;

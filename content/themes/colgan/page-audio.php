@@ -24,8 +24,8 @@ get_header(); ?>
 	$categories = get_categories($cat_args); ?>
 	<div class="row">
 	<?php foreach($categories as $category) {
-			if ($category->name == 'Uncategorized' or $category->name == 'Audio' or $category->slug == 'snapshot-tour') {continue;}
-			echo '<div class="col col-lg-4"><h2 class="category-name">' . $category->name . '</h2>';
+			if ($category->name == 'Uncategorized' or $category->name == 'Audio' or $category->slug == 'snapshot-tour' or $category->slug == '2-meat-comments') {continue;}
+			echo '<div class="col col-sm-6"><h2 class="category-name">' . $category->name . '</h2>';
 
 			 $post_args = array(
 				'posts_per_page' => 5,

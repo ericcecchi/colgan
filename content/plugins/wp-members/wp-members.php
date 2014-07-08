@@ -3,7 +3,7 @@
 Plugin Name: WP-Members
 Plugin URI:  http://rocketgeek.com
 Description: WP access restriction and user registration.  For more information on plugin features, refer to <a href="http://rocketgeek.com/plugins/wp-members/users-guide/">the online Users Guide</a>. A <a href="http://rocketgeek.com/plugins/wp-members/quick-start-guide/">Quick Start Guide</a> is also available. WP-Members(tm) is a trademark of butlerblog.com.
-Version:     2.9.1
+Version:     2.9.4
 Author:      Chad Butler
 Author URI:  http://butlerblog.com/
 License:     GPLv2
@@ -60,7 +60,7 @@ License:     GPLv2
 
 
 /** initial constants **/
-define( 'WPMEM_VERSION', '2.9.1' );
+define( 'WPMEM_VERSION', '2.9.4' );
 define( 'WPMEM_DEBUG', false );
 define( 'WPMEM_DIR',  plugin_dir_url ( __FILE__ ) );
 define( 'WPMEM_PATH', plugin_dir_path( __FILE__ ) );
@@ -179,9 +179,11 @@ function wpmem_init()
 	/**
 	 * add the wp-members shortcodes
 	 */
-	add_shortcode( 'wp-members',      'wpmem_shortcode' );
-	add_shortcode( 'wpmem_field',     'wpmem_shortcode' );
-	add_shortcode( 'wpmem_logged_in', 'wpmem_shortcode' );
+	add_shortcode( 'wp-members',       'wpmem_shortcode' );
+	add_shortcode( 'wpmem_field',      'wpmem_shortcode' );
+	add_shortcode( 'wpmem_logged_in',  'wpmem_shortcode' );
+	add_shortcode( 'wpmem_logged_out', 'wpmem_shortcode' );
+	add_shortcode( 'wpmem_logout',     'wpmem_shortcode' );
 
 
 	/**
@@ -274,7 +276,49 @@ function wpmem_admin_options() {
  */
 function wpmem_install() {
 	require_once( 'wp-members-install.php' );
-	wpmem_do_install();
+	if( is_multisite() ) {
+		// if it is multisite, install options for each blog
+		global $wpdb;
+		$blogs = $wpdb->get_results("
+			SELECT blog_id
+			FROM {$wpdb->blogs}
+			WHERE site_id = '{$wpdb->siteid}'
+			AND spam = '0'
+			AND deleted = '0'
+			AND archived = '0'
+		");
+		$original_blog_id = get_current_blog_id();   
+		foreach ( $blogs as $blog_id ) {
+			switch_to_blog( $blog_id->blog_id );
+			wpmem_do_install();
+		}   
+		switch_to_blog( $original_blog_id );
+	} else {
+		// normal single install
+		wpmem_do_install();
+	}
 }
+
+
+add_action( 'wpmu_new_blog', 'wpmem_mu_new_site', 10, 6 );
+/**
+ * Install default plugin options for a newly added blog in multisite.
+ *
+ * @since 2.9.3
+ *
+ * @param $blog_id
+ * @param $user_id
+ * @param $domain
+ * @param $path
+ * @param $site_id
+ * @param $meta
+ */
+function wpmem_mu_new_site( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
+	require_once( 'wp-members-install.php' );
+	switch_to_blog( $blog_id );
+	wpmem_do_install();
+	restore_current_blog();
+}
+
 
 /** End of File **/

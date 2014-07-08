@@ -40,13 +40,13 @@ function wpmem_bulk_user_action()
     <script type="text/javascript">
       jQuery(document).ready(function() {
 	<?php if( WPMEM_MOD_REG == 1 ) { ?>
-        jQuery('<option>').val('activate').text('<?php _e('Activate')?>').appendTo("select[name='action']");
+        jQuery('<option>').val('activate').text('<?php _e( 'Activate', 'wp-members' )?>').appendTo("select[name='action']");
 	<?php } ?>
-		jQuery('<option>').val('export').text('<?php _e('Export')?>').appendTo("select[name='action']");
+		jQuery('<option>').val('export').text('<?php _e( 'Export', 'wp-members' )?>').appendTo("select[name='action']");
 	<?php if( WPMEM_MOD_REG == 1 ) { ?>
-        jQuery('<option>').val('activate').text('<?php _e('Activate')?>').appendTo("select[name='action2']");
+        jQuery('<option>').val('activate').text('<?php _e( 'Activate', 'wp-members' )?>').appendTo("select[name='action2']");
 	<?php } ?>
-		jQuery('<option>').val('export').text('<?php _e('Export')?>').appendTo("select[name='action2']");
+		jQuery('<option>').val('export').text('<?php _e( 'Export', 'wp-members' )?>').appendTo("select[name='action2']");
 		jQuery('<input id="export_all" name="export_all" class="button action" type="submit" value="<?php _e( 'Export All Users', 'wp-members' ); ?>" />').appendTo(".bottom .bulkactions");
       });
     </script>
@@ -102,11 +102,14 @@ function wpmem_users_page_load()
 		// find out if we need to set passwords
 		$chk_pass = false;
 		$wpmem_fields = get_option( 'wpmembers_fields' );
-		for ( $row = 0; $row < count( $wpmem_fields ); $row++ ) {
-			if( $wpmem_fields[$row][2] == 'password' ) { $chk_pass = true; }
+		foreach( $wpmem_fields as $field ) {
+			if( $field[2] == 'password' && $field[4] == 'y' ) { 
+				$chk_pass = true; 
+				break;
+			}
 		}
 	}
-
+	
 	switch( $action ) {
 		
 	case 'activate':
@@ -429,14 +432,11 @@ function wpmem_a_pre_user_query( $user_search )
 
 			
 		case 'expired':
-			//$chk_show = ( wpmem_chk_exp( $user->ID ) ) ? true : false; // if( wpmem_chk_exp( $user->ID ) ) { $chk_show = true; }
-			
 			$replace_query = "WHERE 1=1 AND {$wpdb->users}.ID IN (
 			 SELECT {$wpdb->usermeta}.user_id FROM $wpdb->usermeta 
 				WHERE {$wpdb->usermeta}.meta_key = 'expires'
-				AND STR_TO_DATE( {$wpdb->usermeta}.meta_value, '%d,%m,%Y' ) < CURDATE() )";
-			
-			
+				AND STR_TO_DATE( {$wpdb->usermeta}.meta_value, '%m/%d/%Y' ) < CURDATE()
+				AND {$wpdb->usermeta}.meta_value != '01/01/1970' )";
 			break;
 	}
 	

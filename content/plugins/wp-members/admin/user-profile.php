@@ -6,7 +6,7 @@
  * 
  * This file is part of the WP-Members plugin by Chad Butler
  * You can find out more about this plugin at http://rocketgeek.com
- * Copyright (c) 2006-2014  Chad Butler (email : plugins@butlerblog.com)
+ * Copyright (c) 2006-2014  Chad Butler
  * WP-Members(tm) is a trademark of butlerblog.com
  *
  * @package WordPress
@@ -46,30 +46,37 @@ function wpmem_admin_fields()
 	echo apply_filters( 'wpmem_admin_profile_heading', __( 'WP-Members Additional Fields', 'wp-members' ) ); ?></h3>   
  	<table class="form-table">
 		<?php
-		$wpmem_fields = get_option( 'wpmembers_fields' ); $valtochk = '';
-		for( $row = 0; $row < count( $wpmem_fields ); $row++ ) {
+		// get fields
+		$wpmem_fields = get_option( 'wpmembers_fields' );
+		// get excluded meta
+		$exclude = wpmem_get_excluded_meta();
+		
+		do_action( 'wpmem_admin_before_profile', $user_id, $wpmem_fields );
+		
+		foreach( $wpmem_fields as $meta ) {
+		
+			$valtochk = ''; 
 
 			/** determine which fields to show in the additional fields area */	
-			$show = ( $wpmem_fields[$row][6] == 'n' && $wpmem_fields[$row][2] != 'password' ) ? true : false;
-			$show = ( $wpmem_fields[$row][1] == 'TOS' && $wpmem_fields[$row][4] != 'y' ) ? null : $show;
+			$show = ( $meta[6] == 'n' && ! in_array( $meta[2], $exclude ) ) ? true : false;
+			$show = ( $meta[1] == 'TOS' && $meta[4] != 'y' ) ? null : $show;
 			
 			if( $show ) {
 				// is the field required
-				$req = ( $wpmem_fields[$row][5] == 'y' ) ? ' <span class="description">' . __( '(required)' ) . '</span>' : '';
+				$req = ( $meta[5] == 'y' ) ? ' <span class="description">' . __( '(required)' ) . '</span>' : '';
 	
 				$show_field = '
 					<tr>
-						<th><label>' . __( $wpmem_fields[$row][1], 'wp-members' ) . $req . '</label></th>
+						<th><label>' . __( $meta[1], 'wp-members' ) . $req . '</label></th>
 						<td>';
-				$val = htmlspecialchars( get_user_meta( $user_id, $wpmem_fields[$row][2], 'true' ) );
-				if( $wpmem_fields[$row][3] == 'checkbox' || $wpmem_fields[$row][3] == 'select' ) {
+				$val = htmlspecialchars( get_user_meta( $user_id, $meta[2], 'true' ) );
+				if( $meta[3] == 'checkbox' || $meta[3] == 'select' ) {
 					$valtochk = $val; 
-					$val = $wpmem_fields[$row][7];
+					$val = $meta[7];
 				}
-				$show_field.=  wpmem_create_formfield( $wpmem_fields[$row][2], $wpmem_fields[$row][3], $val, $valtochk ) . '
+				$show_field.=  wpmem_create_formfield( $meta[2], $meta[3], $val, $valtochk ) . '
 						</td>
 					</tr>';
-				$valtochk = ''; // empty for the next field in the loop
 				
 				/**
 				 * Filter the profile field.
@@ -122,6 +129,9 @@ function wpmem_admin_fields()
 			<th><label><?php _e( 'IP @ registration', 'wp-members' ); ?></label></th>
 			<td><?php echo get_user_meta( $user_id, 'wpmem_reg_ip', 'true' ); ?></td>
 		</tr>
+		
+		<?php do_action( 'wpmem_admin_after_profile', $user_id, $wpmem_fields ); ?>
+		
 	</table><?php
 }
 
@@ -133,17 +143,28 @@ function wpmem_admin_fields()
  */
 function wpmem_admin_update()
 {
-	$user_id = $_REQUEST['user_id'];	
+	$user_id = $_REQUEST['user_id'];
 	$wpmem_fields = get_option( 'wpmembers_fields' );
+
+	/**
+	 * Action before the user profile is updated.
+	 *
+	 * @since 2.9.2
+	 *
+	 * @param int   $user_id      The user ID.
+	 * @param array $wpmem_fields Array of the custom fields.
+	 */
+	do_action( 'wpmem_admin_pre_user_update', $user_id, $wpmem_fields );
+	
 	$fields = array();
 	$chk_pass = false;
-	for( $row = 0; $row < count( $wpmem_fields ); $row++ ) {
-		if( $wpmem_fields[$row][6] == "n" && $wpmem_fields[$row][2] != 'password' && $wpmem_fields[$row][3] != 'checkbox' ) {
-			( isset( $_POST[$wpmem_fields[$row][2]] ) ) ? $fields[$wpmem_fields[$row][2]] = $_POST[$wpmem_fields[$row][2]] : false;
-		} elseif( $wpmem_fields[$row][2] == 'password' ) {
+	foreach( $wpmem_fields as $meta ) {
+		if( $meta[6] == "n" && $meta[3] != 'password' && $meta[3] != 'checkbox' ) {
+			( isset( $_POST[$meta[2]] ) ) ? $fields[$meta[2]] = $_POST[$meta[2]] : false;
+		} elseif( $meta[2] == 'password' ) {
 			$chk_pass = true;
-		} elseif( $wpmem_fields[$row][3] == 'checkbox' ) {
-			( isset( $_POST[$wpmem_fields[$row][2]] ) ) ? $fields[$wpmem_fields[$row][2]] = $_POST[$wpmem_fields[$row][2]] : $fields[$wpmem_fields[$row][2]] = '';
+		} elseif( $meta[3] == 'checkbox' ) {
+			$fields[$meta[2]] = ( isset( $_POST[$meta[2]] ) ) ? $_POST[$meta[2]] : '';
 		}
 	}
 	
@@ -153,16 +174,21 @@ function wpmem_admin_update()
 	 * @since 2.8.2
 	 *
 	 * @param array $fields An array of the posted form values.
+	 * @param int   $user_id The ID of the user being updated.
 	 */
-	$fields = apply_filters( 'wpmem_admin_profile_update', $fields ); 
+	$fields = apply_filters( 'wpmem_admin_profile_update', $fields, $user_id ); 
 	
+	// get any excluded meta fields
+	$exclude = wpmem_get_excluded_meta();
 	foreach( $fields as $key => $val ) {
-		update_user_meta( $user_id, $key, $val );
+		if( ! in_array( $key, $exclude ) ) {
+			update_user_meta( $user_id, $key, $val );
+		}
 	}
 
 	if( WPMEM_MOD_REG == 1 ) {
 
-		$wpmem_activate_user = ( isset( $_POST['activate_user'] ) == '' ) ? $wpmem_activate_user = -1 : $_POST['activate_user'];
+		$wpmem_activate_user = ( isset( $_POST['activate_user'] ) == '' ) ? -1 : $_POST['activate_user'];
 		
 		if( $wpmem_activate_user == 1 ) {
 			wpmem_a_activate_user( $user_id, $chk_pass );
@@ -172,6 +198,17 @@ function wpmem_admin_update()
 	}
 
 	( WPMEM_USE_EXP == 1 ) ? wpmem_a_extend_user( $user_id ) : '';
+	
+	/**
+	 * Action after the user profile is updated.
+	 *
+	 * @since 2.9.2
+	 *
+	 * @param int $user_id The user ID.
+	 */
+	do_action( 'wpmem_admin_after_user_update', $user_id );
+	
+	return;
 }
 
 /** End of File **/

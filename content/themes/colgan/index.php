@@ -26,8 +26,8 @@
 
 	<div class="col col-lg-4">
 		<h2>Ag Market Report</h2>
-		<p>All clients receive the <a href="/commodities-trading/colgan-audio-cast/">Colgan AudioCast</a>, an audio broadcast sent to your phone throughout the day providing you with timely market updates. Listen to a past report and sign-up for a FREE 30-day trial!</p>
-		<h3><span class="glyphicon glyphicon-calendar"></span> <a href="/commodities-trading/colgan-audio-cast/">Free 30-day Trial</a></h3>
+		<p>All clients receive the <a href="/commodities-trading/colgan-audio-cast/">Market Updates</a>, an audio broadcast sent to your phone throughout the day providing you with timely market updates. Listen to a past report and sign-up for a FREE 30-day trial!</p>
+		<h3><span class="glyphicon glyphicon-calendar"></span> <a href="/commodities-trading/market-updates/">Free 30-day Trial</a></h3>
 	</div>
 </div>
 

@@ -57,13 +57,12 @@
 								<li><a href="/commentaries/market-updates/">Market Updates</a></li>
 							</ul>
 						</li>
-						<li><a href="/photos/">Photo Blog</a></li>
 						<li><a href="/open-account/">Open Account</a></li>
 						<li><a href="/contact-us/">Contact Us</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" href="#" data-toggle="dropdown">Log in</a>
 							<ul class="dropdown-menu">
-								<?php if ( !is_user_logged_in() ) { ?><li><a href="/login">To ColganCommodities.com</a></li><?php } ?>
+								<?php if ( !is_user_logged_in() ): ?><li><a href="/login">To ColganCommodities.com</a></li><?php endif; ?>
 								<li><a href="https://members.admis.com/AccountLogin.aspx?ReturnUrl=%2fdefault.aspx">To ADM</a></li>
 							</ul>
 						</li>
@@ -72,11 +71,12 @@
 
 			</div>
 		</nav>
-		<?php if ( is_user_logged_in() ) {
+		<?php
+		if ( is_user_logged_in() ):
 			global $user_identity;
 			global $user_login;
 			get_currentuserinfo();
 		?>
 		<p class="container logged-in">Logged in as <a href="/profile/"><?php echo ($user_identity) ? $user_identity : $user_login; ?></a>. <a href="<?php echo colgan_logout_url(); ?>">Log out.</a></p>
-		<?php } ?>
+	<?php endif; ?>
 		<div id="content" class="container">

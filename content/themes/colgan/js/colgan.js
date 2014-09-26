@@ -13,8 +13,8 @@ $(document).ready(function() {
   $('audio').mediaelementplayer({
     plugins: ['flash','silverlight'],
     enableAutosize: true,
-    features: ['playpause','current','progress','duration'],
-    audioWidth: 250,
+    features: ['playpause','progress','duration'],
+    audioWidth: 200,
      success: function(media, domObject) {
          media.addEventListener('play', function(e) {
             _gaq.push(['_trackEvent', 'Commentary plays', 'Play', $(this).data('category')]);

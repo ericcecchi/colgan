@@ -13,7 +13,7 @@ get_header(); ?>
   <?php endif; ?>
 
   <?php
-  if ( is_user_logged_in() ):
+  // if ( is_user_logged_in() ):
 
   $cat_args = array(
     'orderby' => 'slug',
@@ -59,7 +59,7 @@ get_header(); ?>
     }
   ?>
 
-  <?php endif; // if logged in ?>
+  <?php // endif; // if logged in ?>
 </article>
 </div>
 
